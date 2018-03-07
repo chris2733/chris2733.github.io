@@ -19,6 +19,17 @@
 }
 
 
+/* customising the scrollbar - mostlycustomised is a smarter, cleaner one */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #100b02; /* or add it to the track */
+}
+/* Add a thumb */
+::-webkit-scrollbar-thumb {
+    background: #db2f02;
+}
+
 
 /*editing the position of the central logo */
 
