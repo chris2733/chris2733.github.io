@@ -5,8 +5,33 @@
   background-color: black;
 }
 
-/* loader */
+/* this stops the scrollbar from shoving the content over when it is unhidden with js */
+html {
+  overflow-y: scroll;
+}
 
+/* sets the background to black, this wasnt a problem until bootstrap was linked */
+body {
+  background-color: black !important;
+}
+
+/* setting text selection colour */
+::selection {
+  background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffb7b7; /* Gecko Browsers */
+}
+
+
+
+
+
+
+
+
+
+/* loader */
 #loader {
   width: 100%;
   height: 100vh;
@@ -35,8 +60,8 @@
 
 #zenlogo {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 49.8%;
+  top: 46.3%;
   max-height: 1000px;
   min-height: 30px;
   z-index: 1;
@@ -44,7 +69,10 @@
 }
 #zenlogo img {
   height: 15vw;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
   background-color: transparent;
 }
 
@@ -53,8 +81,8 @@
   position: absolute;
   width: 0.6vw;
   background-color: transparent;
-  left: 49.8%;
-  top: 46.3%;
+  left: 49.2%;
+  top: 44.3%;
   z-index: 2;
 }
 
@@ -99,29 +127,128 @@
 
 /* really, really useful demo on this on http://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/
 * im not gonna explain it all here */
-@keyframes orbit1 {
-    from { transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg); }
+keyframes orbit1 {
+    from { -webkit-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg); }
 }
-@keyframes orbit2 {
-    from { transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg); }
-    to   { transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg); }
+keyframes orbit2 {
+    from { -webkit-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -ms-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -moz-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -o-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -ms-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -moz-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -o-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg); }
 }
-@keyframes orbit3 {
-    from { transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg); }
-    to   { transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg); }
+keyframes orbit3 {
+    from { -webkit-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -ms-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -moz-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -o-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -ms-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -moz-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -o-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg); }
 }
-@keyframes orbit4 {
-    from { transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg); }
+keyframes orbit4 {
+    from { -webkit-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg); }
 }
-@keyframes orbit5 {
-    from { transform: rotate(0deg) translateX(-5vw) translateY(-7vw) rotate(0deg); }
-    to   { transform: rotate(360deg) translateX(-5vw) translateY(-7vw) rotate(-360deg); }
+keyframes orbit5 {
+    from { -webkit-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg); }
 }
-@keyframes orbithalf {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+keyframes orbithalf {
+    from { -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg); }
+}
+
+
+/* adding @-webkit- for other browsers */
+@-webkit-keyframes orbit1 {
+    from { -webkit-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(-2vw) translateY(9vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(-2vw) translateY(9vw) rotate(-360deg); }
+}
+@-webkit-keyframes orbit2 {
+    from { -webkit-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -ms-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -moz-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg);
+    -o-transform: rotate(0deg) translateX(-9vw) translateY(1vw) rotate(240deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -ms-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -moz-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg);
+    -o-transform: rotate(360deg) translateX(-9vw) translateY(1vw) rotate(-120deg); }
+}
+@-webkit-keyframes orbit3 {
+    from { -webkit-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -ms-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -moz-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg);
+    -o-transform: rotate(0deg) translateX(8.3vw) translateY(3vw) rotate(60deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -ms-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -moz-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg);
+    -o-transform: rotate(360deg) translateX(8.3vw) translateY(3vw) rotate(-300deg); }
+}
+@-webkit-keyframes orbit4 {
+    from { -webkit-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(6vw) translateY(-7.5vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(6vw) translateY(-7.5vw) rotate(-360deg); }
+}
+@-webkit-keyframes orbit5 {
+    from { -webkit-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -moz-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg);
+    -o-transform: rotate(0deg) translateX(-5vw) translateY(-9vw) rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -moz-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg);
+    -o-transform: rotate(360deg) translateX(-5vw) translateY(-9vw) rotate(-360deg); }
+}
+@-webkit-keyframes orbithalf {
+    from { -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+    to   { -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg); }
 }
 
 
@@ -135,9 +262,13 @@
 
 #loaderlogo img {
   width: 30vw;
-  transform: translate(-50%, 77vh);
+  -webkit-transform: translate(-50%, 77vh);
+  -ms-transform: translate(-50%, 77vh);
+  -moz-transform: translate(-50%, 77vh);
+  -o-transform: translate(-50%, 77vh);
   background-color: transparent;
 }
+
 
 
 
@@ -185,49 +316,43 @@ a:visited {
 
 /* setting the pencils */
 .pencils {
-  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
   transform-origin: 50% 50%;
 }
 
-
-/* editing the main div containing the comic */
 #main {
-  width: 95%;
-  min-width: 600px;
-  max-width: 1900px;
-  margin: 20px auto;
-}
-
-/* each div within main */
-.mainComic {
-  display: block;
-  height: ;
-  position: relative;
-  margin: 0 auto;
   text-align: center;
 }
+.mainComic{
 
-
-/* each img*/
-.comicimages {
-  max-width: 100%;
-  display: inline-block;
-  margin: 5% auto;
-  position: relative;
-  height: 85vh;
+}
+.img-thumbnail {
+  border: 0px !important;
+  background-color: transparent !important;
+  padding-bottom: 10vh;
 }
 
-/* individual images, weird sizes */
-#c7img, #c8img {
-  height: 100% !important;
+#c12-1, #c12-2, #c12-3, #c13-1, #c13-2 {
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  -o-transform: scale(0.6);
+  padding-bottom: 0 !important;
 }
 
-#c9img {
-  height: 140vh;
+#c4-1, #c4-2, #c5-1, #c5-2 {
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  -o-transform: scale(0.8);
 }
+
 
 #c14img {
-  height: 130vh !important;
+  padding-top: 5vh;
 }
 
 

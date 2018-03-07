@@ -1,9 +1,6 @@
 
 // getting loader first, then page
 
-
-
-
 var myVar= "";
 
 function myFunction() {
@@ -16,5 +13,9 @@ function myFunction() {
 $("#main").hide()
 function showPage() {
   $("#loader").fadeOut(1500);
+  setTimeout(fadeinmain, 1500);
+}
+
+function fadeinmain() {
   $("#main").fadeIn(3000); // fade in the rest of the page
 }
