@@ -8,33 +8,13 @@ var myVar;
 
 function pageLoaded() {
     setTimeout(showPage, 1000);
-    setTimeout(flipSubtext, 3700);
-    setTimeout(typeWriter, 1400);
 }
 
-//new typewriter
-var i = 0;
-var txt = "Hi, I'm Chris.";
-var speed = 100;
-
-function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("demo").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
-}
-
-
-function flipSubtext () {
-  $('#subtext').addClass('subtextanimation');
-}
 
 function showPage() {
   $('#loader').fadeOut("slow");
   // document.getElementById("myDiv").style.display = "block";  is this relevant?
 }
-
 
 
 // Menu icon and items animations
@@ -51,20 +31,22 @@ function menuAnimation() {
     $( "#menuBar2" ).toggleClass( "menubar2after" );
 };
 
-/* for later - not sure what to do!
-function delayMenu() {
-
-  setTimeout(menuAnimation, 3000);
-};
-*/
-
-menuIcon.addEventListener('click', menuAnimation);
+// menuIcon.addEventListener('click', menuAnimation);
 
 
+// making my names characters change as you hover
 
+$("#particles").onload = function () {
+        var i, tx, html, node;
 
+        node = document.getElementById("maintext1h1");
+        tx = node.innerHTML;
 
+        html = "";
+        for (i = 0; i < tx.length; i++)
+        {
+          html += "<span>" + tx.charAt(i) + "</span>";
+        }
 
-/* this behaves in an odd way, not sure why
-$('#menuBar').mouseleave(toggleTheMenu).setTimeout(5000);
-*/
+        node.innerHTML = html;
+      };

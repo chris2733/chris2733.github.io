@@ -5,19 +5,25 @@
   border: 0;
   outline: 0;
   background: transparent;
-  font-family: calibri;
+  font-family: 'PT Sans', 'Open Sans';
+}
+::-moz-selection { /* Code for Firefox */
+    background: #3e3e3e;
 }
 
+::selection {
+    background: #3e3e3e;
+}
 
 /* scroll bar formatting */
 ::-webkit-scrollbar {
   width: 5px;
   height: 8px;
-  background-color: purple; /* or add it to the track */
+  background-color: black; /* or add it to the track */
 }
 /* Add a thumb */
 ::-webkit-scrollbar-thumb {
-    background: green;
+    background: #007991;
 }
 
 
@@ -60,12 +66,12 @@ body {
 }
 
 
-/* the particle..part */
+/* the particle..part...colouring and sizing it*/
 
 #particles {
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
   position: relative;
   background: linear-gradient(45deg,  transparent 0%, transparent 57%, #23646733 100%),
@@ -76,186 +82,89 @@ body {
 }
 
 
-/* menu icon */
+/* editing the menu */
 
-.menuIcon{
-  width: 30px;
-  height: 30px;
-  margin: auto;
+#menucontainer {
+  height: 65px;
+  width: 65px;
   position: absolute;
-  cursor: pointer;
   display: inline-block;
-  visibility: initial;
-  left: 0;
   right: 0;
-  z-index: 2;
+  background-color: #000000aa;
+  z-index: 100;
 }
 
-
-.menuIcon span{
-  background-color:#FFfffF;
-  position: absolute;
-  border-radius: 0.7px;
-  transition: .45s cubic-bezier(0.77, 0, 0.175, 1);
-  width:100%;
-  height: 3px;
-}
-
-
-.menuIcon span:not(:hover){
-  background-color:#fffffdd;
-}
-.menuIcon span:nth-child(1){
-  top: 0vw;
-}
-.menuIcon span:nth-child(2){
-  top: 15px;
-}
-.menuIcon span:nth-child(3){
-  top: 30px;
-}
-.menuIcon:not(.clickMenuIcon):hover span {
-  background-color: #007991;
-}
-
-.clickMenuIcon span:nth-child(1){
-  transform: translateX(0) translateY(15px) rotate(45deg) ;
-}
-.clickMenuIcon span:nth-child(2){
-  transform: scaleX(0);
-  color: rgba(255, 0, 0, 0);
-}
-.clickMenuIcon span:nth-child(3){
-  transform: translateX(0) translateY(-15px) rotate(-45deg);
-}
-
-.clickMenuIcon:hover span {
-  background-color: #007991;
-}
-
-/* rest of the menu animation, titles */
-
-#menuBar {
-   height: 60px;
-   width: 100%;
-   position: fixed;
-   background-color: #0d0d0d00;
-   justify-content: center;
-   z-index: 10;
-}
-
-
-#menuBar2 {
-  height: 100%;
-  margin: auto;
-  background-color: #0d0d0daa;
+#menuicon {
   position: relative;
-  width: 200px;
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 20px;
+  height: 20px;
+  z-index: 101;
+}
+.menuiconspans {
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  transition: .3s cubic-bezier(0.77, 0, 0.175, 1);
+  background-color: #ffffff;
+}
+#menuicon:hover span {
+  background-color: #007991;
 }
 
-
-
-.items {
-   color: #e1e1e1;
-   position: absolute;
-   left: 37%;
-   transform: translateX(-37%);
-   display: inline-block;
-   visibility: hidden;
-   opacity: 0;
-   font-size: 1.2em;
-   z-index: 1;
-   transition: .45s cubic-bezier(0.77, 0, 0.175, 1);
+#iconspan1 {
 }
-
-
-.items:hover{
-  color: #007991;
-  transition: .2s cubic-bezier(0.77, 0, 0.175, 1);
+#iconspan2{
+  top: 50%;
+  transform: translateY(-50%);
 }
-
-
-.first {
-   transform: translate(-7em, 0);
-   visibility: initial;
-   opacity: 1;
-}
-
-.second {
-   transform: translate(-3.5em, 0);
-   visibility: initial;
-   opacity: 1;
-}
-
-.third {
-   transform: translate(3.5em, 0);
-   visibility: initial;
-   opacity: 1;
-}
-
-.fourth {
-   transform: translate(8.5em, 0);
-   visibility: initial;
-   opacity: 1;
+#iconspan3{
+  bottom: 0;
 }
 
 
 
 /* Main body*/
 
-#mainText {
+#maintext1 {
   position: absolute;
+  width: 300px;
   display: inline-block;
   margin: 0 auto;
-  left: 35%;
-  top: 45%;
+  left: 50%;
+  top: 47%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+#maintext2 {
+  position: absolute;
+  width: 300px;
+  display: inline-block;
+  margin: 0 auto;
+  left: 50%;
+  top: 53%;
+  transform: translateX(-50%);
+  text-align: center;
 }
 
-/*typewriter text */
-.typewritertext {
-  font-size: 3vw;
-}
-#fptextsub {
-  font-size: 1.4vw;
-}
+.maintext {
 
-.typewritertext, #fptextsub {
-  font-weight: 400;
-  color: #000000dd;
-  clear: both;
 }
+#maintext1 h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #101010;
+}
+ #maintext2 h1 {
+   font-size: 1.4rem;
+   font-weight: light;
+   color: #101010;
+ }
 
-/* rotating the sub text into frame */
-#subtext {
-  transform-origin: 0px 0px;
-  transform: rotateX(-90deg);
-  visibility: hidden;
-  background-color: #000000dd;
-}
-#fptextsub{
-  color: #ffffff;
-  font-family: 'Press Start 2P', cursive;
-  padding: 1vw;
-}
-#subtextholder {
-  perspective: 400px; /* to give the 3d flipping effect */
-}
-.subtextanimation {
-  animation: flipintext 1s cubic-bezier(0.175, 0.885, 0.32, 1) both;
-}
-@keyframes flipintext {
-  0% {
-    -webkit-transform: rotateX(-90deg);
-            transform: rotateX(-90deg);
-  }
-  100% {
-    -webkit-transform: rotateX(0);
-            transform: rotateX(0);
-    visibility: initial;
-  }
+
+h1#maintext1h1 span:hover
+{
+  background-color: red;
 }
