@@ -4,6 +4,10 @@
 
 //loading page
 
+// hiding the scrollbar until page loads
+
+
+
 var myVar;
 
 function pageLoaded() {
@@ -19,34 +23,42 @@ function showPage() {
 
 // Menu icon and items animations
 
-const menuIcon = document.querySelector('.menuIcon');
+const menuIcon = document.querySelector('#menuicon');
 
 function menuAnimation() {
-    $('.menuIcon').toggleClass("clickMenuIcon");
-    $( "#title1" ).toggleClass( "first" );
-    $( "#title2" ).toggleClass( "second" );
-    $( "#title3" ).toggleClass( "third" );
-    $( "#title4" ).toggleClass( "fourth" );
-    $( "#menuBar2" ).toggleClass( "menubar2before" );
-    $( "#menuBar2" ).toggleClass( "menubar2after" );
+    $('#menuicon').toggleClass("clickMenuSpan");
+    $('#menuicon').toggleClass("rotateMenu");
 };
 
-// menuIcon.addEventListener('click', menuAnimation);
+menuIcon.addEventListener('click', menuAnimation);
 
 
-// making my names characters change as you hover
+// scroll to element when you click the start icons
+function scroll1 () {
+  $('#page1')[0].scrollIntoView({
+    behavior: "smooth",
+  });
+};
+$('#starticon1').click(scroll1);
 
-$("#particles").onload = function () {
-        var i, tx, html, node;
+function scroll2 () {
+  $('#page2')[0].scrollIntoView({
+    behavior: "smooth",
+  });
+};
+$('#starticon2').click(scroll2);
 
-        node = document.getElementById("maintext1h1");
-        tx = node.innerHTML;
+function scroll3 () {
+  $('#page3')[0].scrollIntoView({
+    behavior: "smooth",
+  });
+};
+$('#starticon3').click(scroll3);
 
-        html = "";
-        for (i = 0; i < tx.length; i++)
-        {
-          html += "<span>" + tx.charAt(i) + "</span>";
-        }
 
-        node.innerHTML = html;
-      };
+
+
+
+
+
+//

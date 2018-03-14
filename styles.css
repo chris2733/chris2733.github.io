@@ -15,24 +15,22 @@
     background: #3e3e3e;
 }
 
+
 /* scroll bar formatting */
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 8px;
+  width: 0.4vw;
   background-color: black; /* or add it to the track */
 }
 /* Add a thumb */
 ::-webkit-scrollbar-thumb {
-    background: #007991;
+  background: #007991;
 }
 
 
 /* loading page*/
-
-
 #loader {
   position: absolute;
-  z-index: 100;
+  z-index: 10000;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -51,8 +49,8 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
+  cursor: url(cursor1.png), default;
 }
-
 
 body {
   width: 100%;
@@ -70,6 +68,7 @@ body {
 
 #particles {
   z-index: 1;
+  margin: 0;
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -78,7 +77,6 @@ body {
   linear-gradient(-45deg, #2c478033 0%,  #2c478033 0.3%, #23646733 112%,  transparent 11% ),
   linear-gradient(-90deg, #2c478033 100%, #2c478033 65%, transparent 20% ),
   radial-gradient(ellipse at center, #ffffff66 0%, #64646b80 55%, #000000dd 100%);
-
 }
 
 
@@ -90,28 +88,30 @@ body {
   position: absolute;
   display: inline-block;
   right: 0;
+  top: 0;
   background-color: #000000aa;
-  z-index: 100;
+  z-index: 80;
+  justify-content: center;
+  line-height: 65px;
 }
 
 #menuicon {
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   width: 20px;
   height: 20px;
-  z-index: 101;
+  z-index: 81;
+  margin: auto;
+  margin-top: 22.5px;
 }
 .menuiconspans {
   position: absolute;
   width: 100%;
   height: 3px;
-  transition: .3s cubic-bezier(0.77, 0, 0.175, 1);
   background-color: #ffffff;
 }
 #menuicon:hover span {
   background-color: #007991;
+  transition: 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #iconspan1 {
@@ -123,6 +123,25 @@ body {
 #iconspan3{
   bottom: 0;
 }
+/* transofmring the menu */
+.clickMenuSpan {
+  transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+}
+.clickMenuSpan span:nth-child(1){
+  transform: translateY(290%) rotate(-45deg);
+}
+.clickMenuSpan span:nth-child(2){
+  opacity: 0;
+}
+.clickMenuSpan span:nth-child(3){
+  transform: translateY(-290%) rotate(45deg);
+}
+.rotateMenu {
+  transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: rotate(90deg);
+}
+
+
 
 
 
@@ -150,21 +169,69 @@ body {
 }
 
 .maintext {
-
 }
 #maintext1 h1 {
   font-size: 2rem;
   font-weight: bold;
   color: #101010;
 }
- #maintext2 h1 {
+ .maintext2 {
    font-size: 1.4rem;
    font-weight: light;
    color: #101010;
  }
 
+#starticons {
+  position: absolute;
+  width: 400px;
+  display: inline-block;
+  margin: 0 auto;
+  left: 50%;
+  top: 60%;
+  transform: translateX(-50%);
+  justify-content: center;
+  padding-top: 17px;
+}
+#starticons td {
+  width: 150px;
+  text-align: center;
+}
+#starticons table {
+  margin: auto;
+}
+#starticons img:not(:hover) {
+  border-radius: 23%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#starticons img:hover {
+  border-radius: 23%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.starticonstext {
+  color: #01212c;
+  font-size: 1rem;
+  font-weight: bold;
+}
 
-h1#maintext1h1 span:hover
-{
+#page1 {
+  background-color: #1937ab77;
+  height: 120vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#page2 {
   background-color: red;
+  height: 120vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+#page3 {
+  background-color: green;
+  height: 120vh;
+  width: 100%;
+  overflow: hidden;
 }
