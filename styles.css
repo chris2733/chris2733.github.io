@@ -5,7 +5,7 @@
   border: 0;
   outline: 0;
   background: transparent;
-  font-family: 'PT Sans', 'Open Sans';
+  font-family: 'PT Sans', 'Open Sans' !important;
 }
 ::-moz-selection { /* Code for Firefox */
     background: #3e3e3e;
@@ -44,18 +44,18 @@
 /* Main html and body*/
 
 html {
-  background-color: #313131;
+  background-color: #31313100 !important;
   width: 100%;
   height: 100%;
   padding: 0;
   margin: 0;
-  cursor: url(cursor1.png), default;
+  cursor: url(Images/cursor1.png), default;
 }
 
 body {
   width: 100%;
   height: 100%;
-   background-color: #000000;
+   background-color: #00000000 !important;
    font-family: "Open sans";
    font-size: 1em;
    padding: 0;
@@ -67,18 +67,31 @@ body {
 /* the particle..part...colouring and sizing it*/
 
 #particles {
-  z-index: 1;
+  position: fixed !important;
+  z-index: -1;
   margin: 0;
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background: linear-gradient(45deg,  transparent 0%, transparent 57%, #23646733 100%),
-  linear-gradient(-45deg, #2c478033 0%,  #2c478033 0.3%, #23646733 112%,  transparent 11% ),
-  linear-gradient(-90deg, #2c478033 100%, #2c478033 65%, transparent 20% ),
-  radial-gradient(ellipse at center, #ffffff66 0%, #64646b80 55%, #000000dd 100%);
+  /* new background idea
+  background: linear-gradient(45deg,  #00000014 0%, transparent 57%, #236467a3 100%),
+  linear-gradient(-45deg, #2c478078 0%,  #2c4780c2 0.3%, #236467d1 112%,  #00000029 11% ),
+  linear-gradient(-90deg, #2c47808a 100%, #2c4780a6 65%, #00000008 20% ),
+  radial-gradient(ellipse at center, #ffffffc9 0%, #64646ba8 55%, #000000 100%)
+   */
+  background: linear-gradient(45deg,  transparent 0%, transparent 57%, #23646788 100%),
+  linear-gradient(-45deg, #2c478088 0%,  #2c478088 0.3%, #23646788 112%,  transparent 11% ),
+  linear-gradient(-90deg, #2c478088 100%, #2c478088 65%, transparent 20% ),
+  radial-gradient(ellipse at center, #ffffffdd 0%, #64646bbb 55%, #000000dd 100%);
 }
 
+#textsection {
+  height: 100vh;
+  background-color: #00000017; /* editing this fades the particles enough */
+  position: relative;
+  text-align: center;
+}
 
 /* editing the menu */
 
@@ -145,93 +158,291 @@ body {
 
 
 
-/* Main body*/
+/* Main body text, editing the name and title*/
 
 #maintext1 {
   position: absolute;
-  width: 300px;
   display: inline-block;
-  margin: 0 auto;
-  left: 50%;
-  top: 47%;
-  transform: translateX(-50%);
-  text-align: center;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 50%;
+  /*transform: translateX(-50%);*/
+  opacity: 0;
 }
-#maintext2 {
-  position: absolute;
-  width: 300px;
-  display: inline-block;
-  margin: 0 auto;
-  left: 50%;
-  top: 53%;
-  transform: translateX(-50%);
-  text-align: center;
+.text-pop-up-top {
+	-webkit-animation: text-pop-up-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: text-pop-up-top 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes text-pop-up-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: ;
+  }
+  100% {
+    -webkit-transform: translateY(-50px);
+            transform: translateY(-50px);
+            opacity: 1;
+  }
 }
 
-.maintext {
+
+
+
+#maintext2 {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 60%;
+  /*transform: translateX(-50%);*/
+  opacity: 0;
 }
-#maintext1 h1 {
-  font-size: 2rem;
-  font-weight: bold;
+#maintext2 h1 {
   color: #101010;
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 0.3rem;
 }
- .maintext2 {
-   font-size: 1.4rem;
-   font-weight: light;
-   color: #101010;
- }
+@media only screen and (max-width: 600px) {
+  #maintext2 h1 {
+    font-size: 1.7rem !important;
+  }
+}
+
+pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't show */
+  border: 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 3rem !important;
+  font-weight: 800 !important;
+  color: #101010 !important;
+  letter-spacing: 0.6rem;
+}
+@media only screen and (max-width: 600px) {
+  pre {
+    border: 0 !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    color: #101010 !important;
+    letter-spacing: 0.5rem;
+  }
+}
+
 
 #starticons {
   position: absolute;
-  width: 400px;
   display: inline-block;
   margin: 0 auto;
   left: 50%;
   top: 60%;
   transform: translateX(-50%);
   justify-content: center;
-  padding-top: 17px;
+  padding-top: 2%;
+  flex-wrap: wrap;
 }
 #starticons td {
-  width: 150px;
+  width: 136px;
   text-align: center;
 }
-#starticons table {
+
+
+#starticons table tr {
   margin: auto;
+  vertical-align: center;
 }
 #starticons img:not(:hover) {
+  border: 1.5px #01212cbb solid;
   border-radius: 23%;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.1);
   transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 #starticons img:hover {
+  border: 1.5px #01212cbb solid;
   border-radius: 23%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #ffffff88;
   transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#starticons img:hover + .starticonstext { /*animating the text to appear on this hover */
+  opacity: 1;
 }
 .starticonstext {
   color: #01212c;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin: 0 auto;
+  padding-top: 10%;
+  opacity: 0;
+  transition: all 0.4s;
+  white-space: nowrap;
 }
 
+#starticons img {
+  padding: 2.5px 2.5px 2.5px 2.8px;
+  transform: scale(1.1);
+}
+/* making sure this whole section scales ok */
+@media only screen and (max-width: 600px) {
+  #starticons table tr td {
+    display: block;
+    text-align: left !important;
+    margin-bottom: 5%;
+  }
+  #starticons table tr {
+    align-content: left;
+    transform: translateX(15%);
+  }
+  .starticonstext {
+    /* float: right; */
+    display: inline !important;
+    text-align: left;
+    font-size: 1rem;
+    padding-top: 0;
+  }
+  #starticons img {
+    transform: scale(0.8);
+  }
+}
+#starticon1, #starticon2, #starticon3 {
+  opacity: 0;
+}
+/* animations for the icons */
+.slide-in-fwd-center {
+  animation:slide-in-fwd-center .8s cubic-bezier(.645,.045,.355,1.000) both
+}
+@-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+
+
+
 #page1 {
-  background-color: #1937ab77;
+  z-index: 3;
+  background-color: #1937ab;
   height: 120vh;
   width: 100%;
   overflow: hidden;
 }
 
+
+
 #page2 {
+  z-index: 5;
   background-color: red;
   height: 120vh;
   width: 100%;
   overflow: hidden;
 }
 
-#page3 {
-  background-color: green;
+#page2 img {
+  height: 50px;
+  width: 50px;
+}
+#page2 img:not(:hover) {
+  background-color: white;
+}
+#page2 img:hover {
+  background-color: #357387;
+}
+
+#page2_1 {
+  background-color: purple;
   height: 120vh;
   width: 100%;
   overflow: hidden;
+}
+
+
+
+#page3 {
+  background-color: #2f3640bb;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+#page3header {
+  letter-spacing: 1rem;
+  font-weight: light;
+  text-align: center;
+  padding-top: 15vh;
+  color: #ffffffbb;
+}
+.form-control { /*to keep the background colour of each input box transparent */
+  background-color: transparent !important;
+  border: 2px solid #000000dd !important;
+  transition: ease-in-out 0.3s !important;
+  cursor: url(Images/cursor1.png), default;
+}
+/* controlling the box shadow appearing around every input in the form */
+.form-control:focus {
+  box-shadow: none !important;
+  border: 2px solid #ffffffdd !important;
+}
+.form-control:not(:focus):hover {
+  border: 2px solid #00000066 !important;
+}
+/* making sure the label is the right colour and in the box */
+.form-group label {
+  font: 1.5rem calibri !important;
+  color: #ffffffbb;
+  transition: all 0.3s;
+  position: absolute;
+  transform: translateX(1.6rem) translateY(0.8rem);
+}
+.activeinput { /* this for when i disappears */
+  opacity: 0;
+}
+#message {
+  color: #ffffffbb; /* colour of text typed in message */
+}
+#mysubmitform {
+  padding-top: 10vh;
+  width: 40vw;
+  min-width: 320px;
+}
+#divaroundbutton { /* centering button */
+  text-align: center;
+}
+#actualbutton { /* styling it */
+  border: 2px solid #01212c;
+  border-radius: 10px;
+  transition: all 0.3s;
+  width: 65px;
+  height: 65px;
+  cursor: url(Images/cursor1.png), default;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+#actualbutton:hover {
+  background-color: #ffffff88;
+}
+#page3 input, #page3 textarea {
+  background-color: #2f3640 !important;
 }

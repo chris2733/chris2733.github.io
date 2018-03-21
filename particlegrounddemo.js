@@ -2,7 +2,7 @@
  * Particleground demo
  * @author Jonathan Nicol - @mrjnicol
  */
-
+// 'DOMContentLoaded'
 document.addEventListener('DOMContentLoaded', function () {
   particleground(document.getElementById('particles'), {
     dotColor: 'rgba(255, 255, 255, 0.5)',
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     density: 10000, // One particle every n pixels
     curvedLines: false,
     proximity: 100, // How close two dots need to be before they join
-    parallaxMultiplier: 7, // Lower the number is more extreme parallax
+    parallaxMultiplier: 1000, // Lower the number is more extreme parallax
     particleRadius: 2, // Dot size
   });
   // var intro = document.getElementById('intro');         This was on the demo, duno how it fits in

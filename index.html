@@ -17,9 +17,10 @@
   <title>Chris Law | Front End Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="shortcut icon" href="Images/favicon.ico" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script type='text/javascript' src='jquery.particleground.js'></script>
   <script type='text/javascript' src='particlegrounddemo.js'></script>
@@ -32,78 +33,126 @@
 
 <div id="loader">
   <p>Loading...</p>
+  <div id="innerloader"> <!-- because we cannot seem to fade in the particles -->
+
+  </div>
+
+
 </div>
 
 
 
 <div id="particles">
 
-  <!-- hamburger menu -->
-  <div id="menucontainer">
-      <div id="menuicon">
-        <span id="iconspan1" class="menuiconspans"></span>
-        <span id="iconspan2" class="menuiconspans"></span>
-        <span id="iconspan3" class="menuiconspans"></span>
-      </div>
-  </div>
+  <!-- hamburger menu, not being used for now
+    <div id="menucontainer">
+        <div id="menuicon">
+          <span id="iconspan1" class="menuiconspans"></span>
+          <span id="iconspan2" class="menuiconspans"></span>
+          <span id="iconspan3" class="menuiconspans"></span>
+        </div>
+    </div>    -->
 
 <!-- main text in center -->
-  <div id="maintext1">
-    <h1 id="maintext1h1" class="maintext"><pre>C H R I S   L A W<pre></h1>
-  </div>
-  <div id="maintext2">
-    <h1 class="maintext2">Front End Developer</h1>
-    <h1 class="maintext2">Cardiff, Wales</h1>
-  </div>
-  <div id="starticons">
-    <table>
-      <tr>
-        <td><img src="about.png" alt="" id="starticon1"></td>
-        <td><img src="portfolio.png" alt="" id="starticon2"></td>
-        <td><img src="contact.png" alt="" id="starticon3"></td>
-      </tr>
-      <tr>
-        <td class="starticonstext">A B O U T</td>
-        <td class="starticonstext">P O R T F O L I O</td>
-        <td class="starticonstext">C O N T A C T</td>
-      </tr>
-    </table>
-  </div>
+</div>
+
+
+<div id="textsection">
+      <div id="maintext1" class="">
+        <h1 id="maintext1h1" class="mynamebig"><pre>C H R I S   L A W<pre></h1>
+      </div>
+      <div id="maintext2">
+        <h1 class="maintext2">Front End Developer</h1>
+        <h1 class="maintext2"></h1>
+      </div>
+      <div id="starticons">
+        <table>
+          <tr>
+            <td class="">
+              <img src="Images/about.png" alt="" id="starticon1">
+              <p class="starticonstext" id="starticonstext1">A B O U T</p>
+            </td>
+            <td class="">
+              <img src="Images/portfolio.png" alt="" id="starticon2">
+              <p class="starticonstext" id="starticonstext2">P O R T F O L I O</p>
+            </td>
+            <td class="">
+              <img src="Images/contact.png" alt="" id="starticon3">
+              <p class="starticonstext" id="starticonstext3">C O N T A C T</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+
 </div>
 
 <!-- page 1 -->
 <div id="page1">
   <div id="page1text">
     <div>
-      <p>Front end developer living based in Cardiff.</p>
+      <p>Front end developer based in Cardiff.</p>
       <p>I create websites for a variety of clients, from individuals to startups, working closely with the customer to design exactly what they want.</p>
       <p> A lot of this is based on a system such a Wordpress, which provides a much faster way to setup the site and makes maintenance easier.</p>
-      <p>I particular I love working woth other designers, bringing new ideas to life in the most interesting ways.</p>
+      <p>I particular I love working alongside designers, bringing new ideas to life in the most interesting ways.</p>
     </div>
     <div>
-      <h2>Skillset</h2>
-      <p>HTML</p>
-      <p>CSS</p>
-      <p>Wordpress</p>
-      <p>SEO</p>
-      <p>Javascript</p>
-      <p>Jquery</p>
-      <p>Bootstrap</p>
-      <p>Git</p>
-      <p>Github</p>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Wordpress</li>
+        <li>SEO</li>
+        <li>Javascript</li>
+        <li>Jquery</li>
+        <li>Bootstrap</li>
+        <li>Git</li>
+        <li>Github</li>
+      </ul>
     </div>
   </div>
 </div>
 
 
 <div id="page2">
-  <div></div>
+  <div><img src="codepenpng2.png" alt=""></div>
+</div>
+
+<!-- i want to do something with this, it looks great, but need to decide
+<div id="page2_1">
+  <h1>random interesting stuff from around the web</h1>
+    <div>
+      <iframe src="https://trends.google.com/trends/hottrends/visualize?nrow=2&ncol=4" width="100%" height="400px" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <a href="https://trends.google.com/trends/hottrends/visualize"></a>
+</div>
+-->
+
+<div id="page3"> <!-- mainly for the sumbit form -->
+
+<h1 id="page3header">GET IN TOUCH</h1>
+  <form action="/action_page.php">
+    <div id="mysubmitform" class="container">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="name" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email">
+      </div>
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" rows="5" id="message"></textarea>
+      </div>
+      <div id="divaroundbutton">
+      <button id="actualbutton" type="submit" class="btn btn-outline-primary"><img src="Images/contact2.png" alt=""></button>
+      </div>
+    </div>
+
+  </form>
+
 </div>
 
 
-<div id="page3">
-  <div></div>
-</div>
 
 
 <script src="designs.js"></script>
