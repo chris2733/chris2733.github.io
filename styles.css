@@ -166,7 +166,7 @@ body {
   margin: auto;
   left: 0;
   right: 0;
-  top: 50%;
+  top: 40%;
   /*transform: translateX(-50%);*/
   opacity: 0;
 }
@@ -196,15 +196,16 @@ body {
   margin: auto;
   left: 0;
   right: 0;
-  top: 60%;
+  top: 51%;
   /*transform: translateX(-50%);*/
   opacity: 0;
 }
 #maintext2 h1 {
   color: #101010;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin: 0;
   padding-bottom: 0.3rem;
+  font-family: Raleway !important;
 }
 @media only screen and (max-width: 600px) {
   #maintext2 h1 {
@@ -241,7 +242,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   display: inline-block;
   margin: 0 auto;
   left: 50%;
-  top: 60%;
+  top: 50%;
   transform: translateX(-50%);
   justify-content: center;
   padding-top: 2%;
@@ -379,6 +380,17 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   width: 100%;
   overflow: hidden;
 }
+
+
+#page3divider {
+  height: 75px;
+  margin: 0;
+}
+#page3divider svg {
+  background-color: #2f3640bb;
+}
+
+
 
 
 
