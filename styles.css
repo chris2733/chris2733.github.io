@@ -469,7 +469,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   display: inline-block;
   padding-left: 5%;
   width: 35vw;
-  color: #292929;
+  color: #dedede;
 }
 @media only screen and (max-width: 900px) {
   .portfoliobrief {
@@ -550,7 +550,14 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 
 
-
+/* styling the rule under each portfoliopeice */
+hr.portofliohr {
+  margin: 5% auto;
+  width: 80vw;
+  border: 0;
+  height: 2px;
+  background: linear-gradient(to right, #00000000 0%,#2f3640bb 39%,#2f3640bb 62%, #00000000 100%);
+}
 
 
 

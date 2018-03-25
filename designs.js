@@ -8,6 +8,8 @@
 
 // set the starticonstext to be hidden until everything on the front page has loaded
 $(".starticonstext").attr("display", "none");
+//hiding the rest of the site while it loads
+// $(".hideuntilload").hide();
 
 
 function pageLoaded() {
@@ -46,11 +48,12 @@ function showPage() {
   setTimeout(starticonsanimation1, 2100);
   setTimeout(starticonsanimation2, 2600);
   setTimeout(starticonsanimation3, 3100);
-  if (typeof starticonstext1 === "function") {
+  if (typeof starticonstext1 === "function") { // for different screen sizes
     setTimeout(starticonstext1, 2100);
     setTimeout(starticonstext2, 2600);
     setTimeout(starticonstext3, 3100);
   }
+  // $(".hideuntilload").show();
   // document.getElementById("myDiv").style.display = "block";  is this relevant?
 }
 
