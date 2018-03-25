@@ -70,21 +70,21 @@ function menuAnimation() {
 // scroll to element when you click the start icons
 function scroll1 () {
   $('#page1')[0].scrollIntoView({
-    behavior: "smooth",
+    behavior: "smooth", block: "start",
   });
 };
 $('#starticon1').click(scroll1);
 
 function scroll2 () {
   $('#page2')[0].scrollIntoView({
-    behavior: "smooth",
+    behavior: "smooth", block: "start",
   });
 };
 $('#starticon2').click(scroll2);
 
 function scroll3 () {
   $('#page3')[0].scrollIntoView({
-    behavior: "smooth",
+    behavior: "smooth", block: "start",
   });
 };
 $('#starticon3').click(scroll3);
