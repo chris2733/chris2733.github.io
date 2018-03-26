@@ -249,6 +249,14 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
     letter-spacing: 0.5rem;
   }
 }
+.namehover:not(:hover) {
+  color: inherit;
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.namehover:hover {
+  color: #ffffffbb;
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
 
 
 #starticons {
@@ -368,6 +376,8 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 
 
 
+
+/* page 1 editing */
 #page1 {
   z-index: 3;
   background-color: #34495e;
@@ -375,6 +385,10 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   width: 100%;
   overflow: hidden;
 }
+
+
+
+
 
 
 
@@ -567,7 +581,6 @@ hr.portofliohr {
 
 
 
-
 #page3divider {
   height: 75px;
   margin: 0;
@@ -619,8 +632,8 @@ hr.portofliohr {
 .activeinput { /* this for when i disappears */
   opacity: 0;
 }
-#message {
-  color: #ffffffbb; /* colour of text typed in message */
+#message, #email, #name {
+  color: #00bcd4e6; /* colour of text typed in inputs */
 }
 #mysubmitform {
   padding-top: 10vh;
@@ -644,4 +657,94 @@ hr.portofliohr {
 }
 #page3 input, #page3 textarea {
   background-color: #2f3640 !important;
+}
+
+
+
+
+
+
+
+#page3endpanel { /*whole panel styling */
+  width: 100%;
+  height: 18vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row
+}
+@media only screen and (max-width: 900px) {
+  #page3endpanel {
+    height: 25vh;
+    flex-direction: column-reverse;
+  }
+}
+
+.endpanelsections { /* for all sections */
+  height: 100%;
+  width: 50%;
+  display: inline-block;
+  background-color: #000000ee;
+  float: left;
+}
+@media only screen and (max-width: 900px) {
+  .endpanelsections {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+/* styling left hand section */
+#endpaneltext {
+  color: #ffffffbb;
+}
+#endpaneltext p {
+  font-size: 90%;
+  text-align: center;
+  margin-top: 4%;
+}
+#endpaneltext table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  text-align: center;
+  margin-top: 3%;
+}
+#endpaneltext table td {
+  padding: 0 10px;
+}
+#endpaneltext table td {
+  padding: 0 10px;
+}
+#endpaneltext table td:not(:hover) svg path {
+  fill: #ffffffbb;
+}
+#endpaneltext table td:hover svg path {
+  fill: #00bcd4e6;
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1)
+}
+
+
+/* styling arrow section */
+#page3endpanel .arrowsvg {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#page3endpanel div:nth-of-type(2):not(:hover) #arrowpath {
+  stroke: #ffffffbb;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#page3endpanel div:nth-of-type(2):hover #arrowpath {
+  stroke: #ffffffbb;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#page3endpanel div:nth-of-type(2):not(:hover) {
+  background-color: #000000ee;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+#page3endpanel div:nth-of-type(2):hover {
+  background-color: #000000db;
+  transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }

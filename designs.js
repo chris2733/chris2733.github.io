@@ -114,6 +114,23 @@ function onFocusOut(){
 //  green for ok, scroll down and turn red for not.
 // see https://codepen.io/paulstamp/pen/qagBpL
 
+// clearing form, for use in submitting form
+function clearForm(){
+	$("input[type=email]").val("");
+	$("input[type=name]").val("");
+	$("textarea").val("");
+}
+
+
+//when arrow at bottom clicked, scroll to the very top of the page
+function scrolltop () {
+  $('#textsection')[0].scrollIntoView({
+    behavior: "smooth", block: "start",
+  });
+};
+$('#scrolltothetop').click(scrolltop);
+
+
 
 
 
