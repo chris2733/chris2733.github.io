@@ -11,9 +11,14 @@ $(".starticonstext").attr("display", "none");
 //hiding the rest of the site while it loads
 $(".hideuntilload").hide();
 
+// fading out the loading circle
+function loadinganimationout() {
+  $("#loadinganimation").addClass("scale-out-center");
+}
 
 function pageLoaded() {
-    setTimeout(showPage, 2000);
+  setTimeout(loadinganimationout, 1500);
+  setTimeout(showPage, 2000);
 }
 
 // animations to fade in all divs in first section
