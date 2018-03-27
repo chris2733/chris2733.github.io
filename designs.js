@@ -9,12 +9,14 @@
 // set the starticonstext to be hidden until everything on the front page has loaded
 $(".starticonstext").attr("display", "none");
 //hiding the rest of the site while it loads
-// $(".hideuntilload").hide();
+$(".hideuntilload").hide();
 
 
 function pageLoaded() {
     setTimeout(showPage, 2000);
 }
+
+// animations to fade in all divs in first section
 function maintextanimation() {
   $("#maintext1").addClass("text-pop-up-top");
 }
@@ -41,19 +43,27 @@ if (window.matchMedia("(max-width: 600px)").matches) {
     $("#starticonstext3").addClass("slide-in-fwd-center");
   }
 }
+
+// moving the name and title up from centre
+function movingnames() {
+  $("#textsection2").addClass("movingmynameclass");
+}
+
+
 function showPage() {
   $('#loader').fadeOut("slow");
   setTimeout(maintextanimation, 700);
   setTimeout(maintextanimation2, 1400);
-  setTimeout(starticonsanimation1, 2100);
-  setTimeout(starticonsanimation2, 2600);
-  setTimeout(starticonsanimation3, 3100);
+  setTimeout(starticonsanimation1, 2700);
+  setTimeout(starticonsanimation2, 3200);
+  setTimeout(starticonsanimation3, 3800);
+  setTimeout(movingnames, 2100);
   if (typeof starticonstext1 === "function") { // for different screen sizes
-    setTimeout(starticonstext1, 2100);
-    setTimeout(starticonstext2, 2600);
-    setTimeout(starticonstext3, 3100);
+    setTimeout(starticonstext1, 2700);
+    setTimeout(starticonstext2, 3200);
+    setTimeout(starticonstext3, 3800);
   }
-  // $(".hideuntilload").show();
+  $(".hideuntilload").show();
   // document.getElementById("myDiv").style.display = "block";  is this relevant?
 }
 
@@ -114,12 +124,118 @@ function onFocusOut(){
 //  green for ok, scroll down and turn red for not.
 // see https://codepen.io/paulstamp/pen/qagBpL
 
+
+
 // clearing form, for use in submitting form
+
+var phpURL = "contactform.php";
+
+
+
+function validateEmail(email) {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}
+
+function validateForm(){
+
+		var email = $("input[type=email]").val();
+		var validEmail = validateEmail(email);
+		var validName = $("input[type=name]").val() ? true : false;
+		var validMsg = $("textarea").val() ? true : false;
+
+		var nameError = $("input[type=name]").parent().find(".error-mark");
+		var emailError = $("input[type=email]").parent().find(".error-mark");
+		var msgError = $("textarea").parent().find(".error-mark");
+
+		TweenLite.to(nameError, 0.5, {opacity: validName ? 0 : 1});
+		TweenLite.to(emailError, 0.5, {opacity: validEmail ? 0 : 1});
+		TweenLite.to(msgError, 0.5, {opacity: validMsg ? 0 : 1});
+
+	return (validEmail && validName && validMsg);
+}
+
+function flashButton(color){
+	var originalColor = $("#actualbutton").css("background-color");
+
+	setTimeout(function(){
+		$("#actualbutton").css("background-color", color);
+	},200);
+
+	setTimeout(function(){
+		$("#actualbutton").css("background-color", originalColor);
+	},1600);
+
+}
+
+function sentAnimation(message, color) {
+
+		flashButton(color);
+		var sentElement = $(".result-message");
+		$(sentElement).text(message);
+		var sentTween = new TimelineLite();
+		sentTween.fromTo(sentElement, 0.6, {y:0},{ y:70});
+		sentTween.to(sentElement, 0.6, {y:140, delay:1});
+
+		var envelopeElement = $(".submit-icon");
+		var envelopeTween = new TimelineLite();
+		envelopeTween.fromTo(envelopeElement, 0.6, {y:0}, {y:70});
+		envelopeTween.fromTo(envelopeElement, 0.6, {y:-70}, {y:0, delay:1});
+
+}
+
+
+
 function clearForm(){
 	$("input[type=email]").val("");
 	$("input[type=name]").val("");
 	$("textarea").val("");
+
+  $("input[type=name]").focusout(onFocusOut);
+  $("input[type=email]").focusout(onFocusOut);
+  $("textarea").focusout(onFocusOut);
 }
+
+
+$(function() {
+  $('#thisistheform').submit(function(event) {
+    event.preventDefault();
+
+		if(validateForm()){
+			sentAnimation("Sent", "#4cd137");
+
+			//post form
+			var formEl = $(this);
+			console.log(formEl.serialize());
+			var submitButton = $('input[type=submit]', formEl);
+
+			$.ajax({
+				type: 'POST',
+				url: phpURL,
+				accept: {
+					javascript: 'application/javascript'
+				},
+				data: formEl.serialize(),
+				beforeSend: function() {
+					submitButton.prop('disabled', 'disabled');
+				}
+			}).done(function(data) {
+				submitButton.prop('disabled', false);
+			});
+
+			clearForm();
+
+		}
+		else{
+			sentAnimation("Error", "#c23616");
+		}
+  });
+});
+
+
+
+
+
 
 
 //when arrow at bottom clicked, scroll to the very top of the page

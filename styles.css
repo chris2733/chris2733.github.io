@@ -19,7 +19,7 @@
 
 /* scroll bar formatting */
 ::-webkit-scrollbar {
-  width: 0.4vw;
+  width: 7px;
   background-color: black; /* or add it to the track */
 }
 /* Add a thumb */
@@ -30,15 +30,77 @@
 
 /* loading page*/
 #loader {
-  position: absolute;
-  z-index: 10000;
+  position: fixed;
+  z-index: 1000;
   text-align: center;
   width: 100%;
   height: 100%;
-  margin: auto;
-  font-size: 2em;
-  background-color: #313131;
+  background-color: #040404;
 }
+#loader div {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 45%;
+  transform: translateY(-50%);
+  height: 0;
+  width: 0;
+  border: 0 solid #185d6b;
+  border-radius: 50%;
+  animation: loadingcircle 1.2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+@keyframes loadingcircle {
+  0% {
+    height: 0;
+    width: 0;
+    background-color: #313131;
+  }
+  29% {
+    background-color: #313131;
+  }
+  30% {
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    border-width: 25px;
+    opacity: 1;
+  }
+  100% {
+    height: 50px;
+    width: 50px;
+    border-width: 0;
+    opacity: 0;
+    background-color: transparent;
+  }
+}
+#loader p {
+  font-size: 1.4em;
+  color: #007991;
+  text-transform: uppercase;
+  letter-spacing: 1.1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 52%;
+  transform: translateX(0.4%);
+  animation: loadingp 1.2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+@keyframes loadingp {
+  0% {
+    opacity: 0.1;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+
 
 
 
@@ -88,6 +150,7 @@ body {
 }
 
 #textsection {
+  position: relative;
   height: 100vh;
   background-color: #00000017; /* editing this fades the particles enough */
   position: relative;
@@ -96,17 +159,34 @@ body {
 
 #textsection2 {
   display: inline-block;
-  margin: auto;
   position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
+  margin: 35vh auto 0 auto;
   overflow: auto;
   max-height: 380px;
   max-width: 430px;
   min-width: 320px;
 }
+.movingmynameclass { /* for moving this section up to centre, after my name pops up there */
+	-webkit-animation: movingmynameclass 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+	        animation: movingmynameclass 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@keyframes movingmynameclass {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+            opacity: ;
+  }
+  100% {
+    -webkit-transform: translateY(-10vh);
+            transform: translateY(-10vh);
+            opacity: 1;
+  }
+}
+
 
 /* editing the menu
 #menucontainer {
@@ -181,7 +261,6 @@ body {
   left: 0;
   right: 0;
   top: 27%;
-  /*transform: translateX(-50%);*/
   opacity: 0;
 }
 .text-pop-up-top {
@@ -211,7 +290,6 @@ body {
   left: 0;
   right: 0;
   top: 47%;
-  /*transform: translateX(-50%);*/
   opacity: 0;
 }
 #maintext2 h1 {
@@ -380,15 +458,50 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 /* page 1 editing */
 #page1 {
   z-index: 3;
-  background-color: #34495e;
+  background-color: #dcdde1aa;
   height: 120vh;
   width: 100%;
   overflow: hidden;
 }
+#page1text {
+  color: #000000bb;
+}
+#page1textseg1 {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20%;
+  align-items: center;
+  justify-content: space-evenly center;
+  max-width: 1400px;
+}
+@media only screen and (max-width: 900px;) {
+  #page1textseg1 {
+    flex-direction: column;
+  }
+}
+#page1text img:nth-of-type(1) {
+  height: 150px;
+  margin-right: 10%;
+}
+#page1text .page1headers {
+  font-size: 1.6rem;
+  letter-spacing: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4%;
+  margin-top: 1%;
+}
 
+#listofskills, #listoffutureskills {
+ text-align: center;
+ margin-top: 8%;
+}
 
-
-
+#page1text ul {
+  list-style-type: none;
+  white-space: nowrap;
+}
 
 
 
@@ -396,24 +509,37 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 
 
 /* line between pagee 1 and 2 */
-#page2divider {
+#page2dividers {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+}
+
+#page2dividers svg {
   height: 85px;
-  margin: 0;
-}
-#page2divider svg {
-  background-color: #40739e;
 }
 
 
+#page2dividerfirsthalf, #page2dividersecondhalf  {
+  background-color: transparent;
+  width: 100%;
+  position: absolute;
+}
 
+
+
+
+
+
+/* page 2 */
 #page2 {
   position: relative;
   z-index: 3;
-  background-color: #40739e;
-  height: ;
+  background-color: #50789a;
   width: 100%;
   overflow: hidden;
-  padding-top: 5%;
+  padding-top: 10%;
+  margin-top: 85px;
 }
 
 #page2 h1:nth-of-type(1) { /* editing header */
@@ -577,15 +703,10 @@ hr.portofliohr {
 
 
 
-
-
-
-
-#page3divider {
-  height: 75px;
-  margin: 0;
-}
-#page3divider svg {
+#page3dividerfirsthalf {
+  z-index: 10;
+  position: relative;
+  width: 100%;
   background-color: #2f3640bb;
 }
 
@@ -593,6 +714,7 @@ hr.portofliohr {
 
 
 
+/* page 3 */
 #page3 {
   background-color: #2f3640bb;
   height: 100vh;
@@ -636,21 +758,24 @@ hr.portofliohr {
   color: #00bcd4e6; /* colour of text typed in inputs */
 }
 #mysubmitform {
+  position: relative;
   padding-top: 10vh;
   width: 40vw;
   min-width: 320px;
 }
-#divaroundbutton { /* centering button */
-  text-align: center;
-}
 #actualbutton { /* styling it */
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   border: 2px solid #01212c;
   border-radius: 10px;
-  transition: all 0.3s;
+  transition: all 0.6s;
   width: 65px;
   height: 65px;
   cursor: url(Images/cursor1.png), default;
   background-color: rgba(255, 255, 255, 0.3);
+  overflow: hidden;
 }
 #actualbutton:hover {
   background-color: #ffffff88;
@@ -658,8 +783,38 @@ hr.portofliohr {
 #page3 input, #page3 textarea {
   background-color: #2f3640 !important;
 }
-
-
+.form-group { /* this so the rest can be positioned absolutely, with no difficulty */
+  position: relative;
+}
+.error-mark { /* for the red star in each of the boxes */
+  position: absolute;
+  font-size: 22px;
+	font-family: 'Merriweather', serif;
+  color: red;
+	height:100%;
+	bottom: -5px;
+	right: 5px;
+	text-align:right;
+	opacity: 0;
+}
+.result { /* contains the icon and message */
+	pointer-events: none;
+	position: relative;
+	width:100%;
+	height:100%;
+	z-index: 99;
+	top: 12px;
+}
+.result-message { /* positioning this to be above, and ensuring the js has Y not X to move along */
+  position:absolute;
+	pointer-events: none;
+	width:100%;
+	text-align:center;
+	top: -70px;
+	bottom: ;
+	font-size: 14px;
+	color: white;
+}
 
 
 
@@ -671,11 +826,11 @@ hr.portofliohr {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 @media only screen and (max-width: 900px) {
   #page3endpanel {
-    height: 25vh;
+    height: 30vh;
     flex-direction: column-reverse;
   }
 }
@@ -701,7 +856,7 @@ hr.portofliohr {
 #endpaneltext p {
   font-size: 90%;
   text-align: center;
-  margin-top: 4%;
+  margin-top: 3vh;
 }
 #endpaneltext table {
   margin-left: auto;
@@ -721,16 +876,22 @@ hr.portofliohr {
 }
 #endpaneltext table td:hover svg path {
   fill: #00bcd4e6;
-  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1)
+  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
 }
 
 
 /* styling arrow section */
 #page3endpanel .arrowsvg {
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  display: block;
+  margin: auto;
+  margin-top: 8.5vh;
+}
+@media only screen and (max-width: 900px) {
+  #page3endpanel .arrowsvg {
+    display: block;
+    margin: auto;
+    margin-top: 6.5vh;
+  }
 }
 #page3endpanel div:nth-of-type(2):not(:hover) #arrowpath {
   stroke: #ffffffbb;
