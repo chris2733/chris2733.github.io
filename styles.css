@@ -9,11 +9,11 @@
   cursor: url(Images/cursor1.png), default;
 }
 ::-moz-selection { /* Code for Firefox */
-    background: #3e3e3e;
+    background: rgb(62, 62, 62);
 }
 
 ::selection {
-    background: #3e3e3e;
+    background: rgb(62, 62, 62);
 }
 
 
@@ -24,7 +24,7 @@
 }
 /* Add a thumb */
 ::-webkit-scrollbar-thumb {
-  background: #007991;
+  background: rgb(0, 121, 145);
 }
 
 
@@ -35,7 +35,7 @@
   text-align: center;
   width: 100%;
   height: 100%;
-  background-color: #040404;
+  background-color: rgb(4, 4, 4);
 }
 #loadinganimation {
   position: relative;
@@ -81,7 +81,7 @@
   transform: translateY(-50%);
   height: 0;
   width: 0;
-  border: 0 solid #185d6b;
+  border: 0 solid rgb(24, 93, 107);
   border-radius: 50%;
   animation: loadingcircle 1.2s infinite cubic-bezier(0.645, 0.045, 0.355, 1);
 }
@@ -89,10 +89,10 @@
   0% {
     height: 0;
     width: 0;
-    background-color: #313131;
+    background-color: rgb(48, 48, 48);
   }
   29% {
-    background-color: #313131;
+    background-color: rgb(48, 48, 48);
   }
   30% {
     height: 50px;
@@ -111,7 +111,7 @@
 }
 #loader p { /* editing the text and making sure it fades like the circle */
   font-size: 1.4em;
-  color: #007991;
+  color: rgb(0, 121, 145);
   text-transform: uppercase;
   letter-spacing: 1.1rem;
   position: absolute;
@@ -141,7 +141,7 @@
 /* Main html and body*/
 
 html {
-  background-color: #31313100 !important;
+  background-color: rgba(49, 49, 49, 1) !important;
   width: 100%;
   height: 100%;
   padding: 0;
@@ -152,7 +152,7 @@ html {
 body {
   width: 100%;
   height: 100%;
-  background-color: #00000000 !important;
+  background-color: rgba(0,0,0,0) !important;
   font-family: "Open sans";
   font-size: 1em;
   padding: 0;
@@ -177,10 +177,10 @@ body {
   linear-gradient(-90deg, #2c47808a 100%, #2c4780a6 65%, #00000008 20% ),
   radial-gradient(ellipse at center, #ffffffc9 0%, #64646ba8 55%, #000000 100%)
    */
-  background: linear-gradient(45deg,  transparent 0%, transparent 57%, #23646788 100%),
-  linear-gradient(-45deg, #2c478088 0%,  #2c478088 0.3%, #23646788 112%,  transparent 11% ),
-  linear-gradient(-90deg, #2c478088 100%, #2c478088 65%, transparent 20% ),
-  radial-gradient(ellipse at center, #ffffffdd 0%, #64646bbb 55%, #000000dd 100%);
+  background: linear-gradient(45deg,  transparent 0%, transparent 57%, rgba(35, 100, 103, 0.53) 100%),
+  linear-gradient(-45deg, rgba(44, 71, 128, 0.53) 0%,  rgba(44,71,128,0.53) 0.3%, rgba(35,100,103,0.53) 112%,  transparent 11% ),
+  linear-gradient(-90deg, rgba(44,71,128,0.53) 100%, rgba(44,71,128,0.53) 65%, transparent 20% ),
+  radial-gradient(ellipse at center, rgba(255,255,255,0.87) 0%, rgba(100,100,107,0.73) 55%, rgba(0,0,0,0.87) 100%);
 }
 
 #textsection {
@@ -199,7 +199,7 @@ body {
   top: 0;
   bottom: 0;
   margin: 35vh auto 0 auto;
-  overflow: auto;
+  overflow: hidden;
   max-height: 380px;
   max-width: 430px;
   min-width: 320px;
@@ -327,7 +327,7 @@ body {
   opacity: 0;
 }
 #maintext2 h1 {
-  color: #ffffffaa;
+  color: rgba(225,225,225,0.67);
   font-size: 1.8rem;
   margin: 0;
   padding-bottom: 0.3rem;
@@ -346,7 +346,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   margin: 0 !important;
   font-size: 3rem !important;
   font-weight: 800 !important;
-  color: #121f29 !important;
+  color: rgba(18,31,41) !important;
   letter-spacing: 0.6rem;
 }
 @media only screen and (max-width: 600px) {
@@ -357,7 +357,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
     margin: 0 !important;
     font-size: 70% !important;
     font-weight: 800 !important;
-    color: #121f29 !important;
+    color: rgba(18,31,41) !important;
     letter-spacing: 0.5rem;
   }
 }
@@ -366,7 +366,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 .namehover:hover {
-  color: #ffffffbb;
+  color: rgba(255,255,255,0.67);
   transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -393,9 +393,9 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 /* making sure the images behave in the right way across mobile and desktop */
 @media only screen and (min-width: 600px) {
   #starticons img:hover {
-    border: 1.5px #01212cbb solid;
+    border: 1.5px rgba(1,33,44,0.73) solid;
     border-radius: 23%;
-    background-color: #ffffff88;
+    background-color: rgba(255,255,255,0.53);
     transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   #starticons img:hover + .starticonstext { /*animating the text to appear on this hover */
@@ -404,20 +404,20 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 @media only screen and (max-width: 600px) {
   #starticons img:hover { /* otherwise it loses its backgroundand border */
-    border: 1.5px #01212cbb solid;
+    border: 1.5px rgba(1,33,44,0.73) solid;
     border-radius: 23%;
     background-color: rgba(255, 255, 255, 0.1);
   }
 }
 #starticons img:not(:hover) {
-  border: 1.5px #01212cbb solid;
+  border: 1.5px rgba(1,33,44,0.73) solid;
   border-radius: 23%;
   background-color: rgba(255, 255, 255, 0.1);
   transition: 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .starticonstext {
-  color: #01212c;
+  color: rgba(1,33,44,1);
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0 auto;
@@ -457,7 +457,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 /* animations for the icons */
 .slide-in-fwd-center {
-  animation:slide-in-fwd-center .8s cubic-bezier(.645,.045,.355,1.000) both
+  animation: slide-in-fwd-center .8s cubic-bezier(.645,.045,.355,1.000) both
 }
 @-webkit-keyframes slide-in-fwd-center {
   0% {
@@ -484,6 +484,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   }
 }
 
+
 #page1dividersecondhalf {
   height: 85px;
 }
@@ -497,13 +498,15 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 /* page 1 editing */
 #page1 {
   z-index: 3;
-  background-color: #dcdde1aa;
-  height: 120vh;
+  background-color: rgba(220, 221, 224, 0.67);
   width: 100%;
   overflow: hidden;
 }
 #page1text {
-  color: #000000bb;
+  color: rgba(0,0,0,0.733);
+  box-sizing: border-box;
+  padding: 6%;
+  margin-bottom: 5%;
 }
 #page1textseg1 {
   font-size: 1.5rem;
@@ -519,7 +522,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
     flex-direction: column;
   }
 }
-#page1text img:nth-of-type(1) {
+#page1textseg1 img:nth-of-type(1) {
   height: 150px;
   margin-right: 10%;
 }
@@ -530,16 +533,66 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   text-transform: uppercase;
   margin-bottom: 4%;
   margin-top: 1%;
+  line-height: 2.5rem;
 }
 
+#page1textseg1 {
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 535px) {
+  #page1textseg1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  #page1text h3 {
+    text-align: center;
+    margin-bottom: 3rem !important;
+  }
+  #page1textseg1 img {
+    margin-bottom: 10%;
+    margin-right: 0 !important;
+  }
+}
+
+#listofskills {
+}
+#listofskills table {
+  width: 100%;
+  max-width: 300px;
+  height: 20vh;
+}
+#listofskills table img {
+  margin: 0;
+  width: 3rem;
+  padding-right: 1rem;
+}
+#listofskills table td {
+  width: 50px;
+  width: 1rem;
+  padding-bottom: 1rem;
+}
+#listofskills table p {
+  display: inline-block;
+}
 #listofskills, #listoffutureskills {
- text-align: center;
- margin-top: 8%;
+  width: 50%;
+  text-align: left;
+  margin-top: 8%;
+  float: left;
 }
-
-#page1text ul {
-  list-style-type: none;
-  white-space: nowrap;
+@media only screen and (max-width: 535px) {
+  #listofskills, #listoffutureskills {
+    width: 100%;
+    text-align: left;
+    margin: 8% auto;
+    float: none;
+  }
+  #page1text table {
+    margin: 8% auto;
+  }
 }
 
 
@@ -574,7 +627,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 #page2 {
   position: relative;
   z-index: 3;
-  background-color: #50789a;
+  background-color: rgb(80, 120, 154);
   width: 100%;
   overflow: hidden;
   padding-top: 10%;
@@ -583,7 +636,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 
 #page2 h1:nth-of-type(1) { /* editing header */
   font-size: 4rem;
-  color: #ffffffaa;
+  color: rgba(255, 255, 255, 0.67);
   letter-spacing: 1rem;
   text-transform: uppercase;
   font-weight: 500;
@@ -648,7 +701,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   display: inline-block;
   padding-left: 5%;
   width: 35vw;
-  color: #dedede;
+  color: rgb(222, 222, 222);
 }
 @media only screen and (max-width: 900px) {
   .portfoliobrief {
@@ -681,7 +734,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   height: 90%;
   overflow-x: hidden;
   overflow-y: scroll;
-  border: 3px solid #dcdde1;
+  border: 3px solid rgb(220, 221, 224);
   border-top: none !important;
 }
 .previewscreen::-webkit-scrollbar {
@@ -691,7 +744,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 .previewbar { /* styling the preciew to look like a browser tab */
   width: 100%;
   height: 10%;
-  background-color: #dcdde1;
+  background-color: rgb(220, 221, 224);
   padding-left: 3%;
   display: flex;
 }
@@ -735,7 +788,7 @@ hr.portofliohr {
   width: 80vw;
   border: 0;
   height: 2px;
-  background: linear-gradient(to right, #00000000 0%,#2f3640bb 39%,#2f3640bb 62%, #00000000 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(47, 54, 64, 0.67) 39%, rgba(47, 54, 64, 0.67) 62%, rgba(0, 0, 0, 0) 100%);
 }
 
 
@@ -746,7 +799,7 @@ hr.portofliohr {
   z-index: 10;
   position: relative;
   width: 100%;
-  background-color: #2f3640bb;
+  background-color: rgba(47, 54, 64, 0.67);
 }
 
 
@@ -755,37 +808,50 @@ hr.portofliohr {
 
 /* page 3 */
 #page3 {
-  background-color: #2f3640bb;
-  height: 100vh;
+  background-color: rgba(47, 54, 64, 0.67);
   width: 100%;
   overflow: hidden;
 }
+#page3text { /* div containering everything in page 3 */
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+@media only screen and (max-width: 535px) {
+  #page3text {
+    margin-bottom: 10%;
+  }
+}
+
+
 /* contact form */
 #page3header {
   letter-spacing: 1rem;
   font-weight: light;
   text-align: center;
   padding-top: 15vh;
-  color: #ffffffbb;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: rgba(255, 255, 255, 0.73);
 }
 .form-control { /*to keep the background colour of each input box transparent */
   background-color: transparent !important;
-  border: 2px solid #000000dd !important;
+  border: 2px solid rgba(0, 0, 0, 0.87) !important;
   transition: ease-in-out 0.3s !important;
   cursor: url(Images/cursor1.png), default;
 }
 /* controlling the box shadow appearing around every input in the form */
 .form-control:focus {
   box-shadow: none !important;
-  border: 2px solid #ffffffdd !important;
+  border: 2px solid rgba(255, 255, 255, 0.87) !important;
 }
 .form-control:not(:focus):hover {
-  border: 2px solid #00000066 !important;
+  border: 2px solid rgba(0, 0, 0, 0.4) !important;
 }
 /* making sure the label is the right colour and in the box */
 .form-group label {
   font: 1.5rem calibri !important;
-  color: #ffffffbb;
+  color: rgba(255, 255, 255, 0.87);
   transition: all 0.3s;
   position: absolute;
   transform: translateX(1.6rem) translateY(0.8rem);
@@ -794,7 +860,7 @@ hr.portofliohr {
   opacity: 0;
 }
 #message, #email, #name {
-  color: #00bcd4e6; /* colour of text typed in inputs */
+  color: rgba(0, 188, 212, 230); /* colour of text typed in inputs */
 }
 #mysubmitform {
   position: relative;
@@ -807,7 +873,7 @@ hr.portofliohr {
   left: 0;
   right: 0;
   margin: 0 auto;
-  border: 2px solid #01212c;
+  border: 2px solid rgb(1, 33, 45);
   border-radius: 10px;
   transition: all 0.6s;
   width: 65px;
@@ -817,10 +883,10 @@ hr.portofliohr {
   overflow: hidden;
 }
 #actualbutton:hover {
-  background-color: #ffffff88;
+  background-color: rgba(255, 255, 255, 136);
 }
 #page3 input, #page3 textarea {
-  background-color: #2f3640 !important;
+  background-color: rgb(47, 54, 64) !important;
 }
 .form-group { /* this so the rest can be positioned absolutely, with no difficulty */
   position: relative;
@@ -878,19 +944,19 @@ hr.portofliohr {
   height: 100%;
   width: 50%;
   display: inline-block;
-  background-color: #000000ee;
+  background-color: rgba(0,0,0,1);
   float: left;
 }
 @media only screen and (max-width: 900px) {
   .endpanelsections {
     width: 100%;
-    height: 50%;
+    height: 100%;
   }
 }
 
 /* styling left hand section */
 #endpaneltext {
-  color: #ffffffbb;
+  color: rgba(255,255,255,0.84);
 }
 #endpaneltext p {
   font-size: 90%;
@@ -911,10 +977,10 @@ hr.portofliohr {
   padding: 0 10px;
 }
 #endpaneltext table td:not(:hover) svg path {
-  fill: #ffffffbb;
+  fill: rgba(255,255,255, 0.84);
 }
 #endpaneltext table td:hover svg path {
-  fill: #00bcd4e6;
+  fill: rgba(0, 188, 212, 0.94);
   transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
 }
 
@@ -933,18 +999,18 @@ hr.portofliohr {
   }
 }
 #page3endpanel div:nth-of-type(2):not(:hover) #arrowpath {
-  stroke: #ffffffbb;
+  stroke: rgba(255,255,255,187);
   transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 #page3endpanel div:nth-of-type(2):hover #arrowpath {
-  stroke: #ffffffbb;
+  stroke: rgba(255,255,255,187);
   transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 #page3endpanel div:nth-of-type(2):not(:hover) {
-  background-color: #000000ee;
+  background-color: rgba(0,0,0,1);
   transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 #page3endpanel div:nth-of-type(2):hover {
-  background-color: #000000db;
+  background-color: rgba(0,0,0,0.75);
   transition: all 300ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }

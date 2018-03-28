@@ -84,6 +84,21 @@ function menuAnimation() {
 
 //menuIcon.addEventListener('click', menuAnimation);
 
+// since scrollinotview doesnt work too well on certain browxers, use more js instead
+function getOffset( el ) { // to find position of element on page
+    var _x = 0;
+    var _y = 0;
+    while( el && !isNaN( el.offsetLeft ) && !isNaN( el.offsetTop ) ) {
+        _x += el.offsetLeft - el.scrollLeft;
+        _y += el.offsetTop - el.scrollTop;
+        el = el.offsetParent;
+    }
+    return { top: _y, left: _x };
+}
+var x = getOffset( document.getElementById('yourElId') ).left;
+
+
+
 
 // scroll to element when you click the start icons
 function scroll1 () {
@@ -106,6 +121,11 @@ function scroll3 () {
   });
 };
 $('#starticon3').click(scroll3);
+
+
+
+
+
 
 
 // make label text i form disappear when clicked on and if text is typed
