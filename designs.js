@@ -181,15 +181,32 @@ function validateForm(){
 }
 
 function flashButton(color){
-	var originalColor = $("#actualbutton").css("background-color");
-
+	var originalColor = "rgba(255, 255, 255, 0.3)";
+  /*
 	setTimeout(function(){
 		$("#actualbutton").css("background-color", color);
 	},200);
 
 	setTimeout(function(){
 		$("#actualbutton").css("background-color", originalColor);
+	},1600); */
+
+  if (color==="#4cd137") {
+    setTimeout(function(){
+  		$("#actualbutton").addClass("buttongreen");
+    },200);
+  setTimeout(function(){
+		$("#actualbutton").removeClass("buttongreen");
 	},1600);
+  }
+  else {
+    setTimeout(function(){
+  		$("#actualbutton").addClass("buttonred");
+    },200);
+  setTimeout(function(){
+		$("#actualbutton").removeClass("buttonred");
+	},1600);
+}
 
 }
 

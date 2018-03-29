@@ -204,6 +204,14 @@ body {
   max-width: 430px;
   min-width: 320px;
 }
+@media only screen and (max-width: 535px) {
+  #textsection2 {
+    margin: 25vh auto 0 auto;
+  }
+}
+
+
+
 .movingmynameclass { /* for moving this section up to centre, after my name pops up there */
 	-webkit-animation: movingmynameclass 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 	        animation: movingmynameclass 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
@@ -559,22 +567,21 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 
 #listofskills {
 }
-#listofskills table {
+#page1text table {
   width: 100%;
   max-width: 300px;
-  height: 20vh;
+  margin-top: 5%;
 }
-#listofskills table img {
-  margin: 0;
-  width: 3rem;
+#page1text table img {
+  width: 4rem;
   padding-right: 1rem;
 }
-#listofskills table td {
+#page1text table td {
   width: 50px;
   width: 1rem;
   padding-bottom: 1rem;
 }
-#listofskills table p {
+#page1text table p {
   display: inline-block;
 }
 #listofskills, #listoffutureskills {
@@ -633,7 +640,6 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   padding-top: 10%;
   margin-top: 85px;
 }
-
 #page2 h1:nth-of-type(1) { /* editing header */
   font-size: 4rem;
   color: rgba(255, 255, 255, 0.67);
@@ -643,8 +649,6 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   text-align: center;
   margin-bottom: 5%;
 }
-
-
 
 
 .portfoliopieces { /* each portfolio peice */
@@ -815,11 +819,11 @@ hr.portofliohr {
 #page3text { /* div containering everything in page 3 */
   position: relative;
   width: 100%;
-  height: 100vh;
+  margin-bottom: 20%;
 }
 @media only screen and (max-width: 535px) {
   #page3text {
-    margin-bottom: 10%;
+    margin-bottom: 30%;
   }
 }
 
@@ -883,7 +887,21 @@ hr.portofliohr {
   overflow: hidden;
 }
 #actualbutton:hover {
-  background-color: rgba(255, 255, 255, 136);
+  background-color: rgba(255, 255, 255, 0.7); /* this needed otherwise after the button is clicked, hover doesnt work...due to the JS */
+}
+
+/* since this whole button fiasco affects hover, adding and removing clases might be a different way */
+.buttongreen {
+  background-color: rgb(76, 209, 55) !important;
+}
+.buttonred {
+  background-color: rgb(194, 54, 22) !important;
+}
+
+
+
+.btn:focus { /* this removes the blue outline from bootstrap */
+  outline: none !important;
 }
 #page3 input, #page3 textarea {
   background-color: rgb(47, 54, 64) !important;
@@ -895,7 +913,7 @@ hr.portofliohr {
   position: absolute;
   font-size: 22px;
 	font-family: 'Merriweather', serif;
-  color: red;
+  color: rgb(255,0,0);
 	height:100%;
 	bottom: -5px;
 	right: 5px;
