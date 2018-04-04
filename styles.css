@@ -735,7 +735,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 .previewscreen { /* the part of the preview showing the webpage */
   position: relative;
   width: 100%;
-  height: 90%;
+  height: 91%;
   overflow-x: hidden;
   overflow-y: scroll;
   border: 3px solid rgb(220, 221, 224);
@@ -747,7 +747,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 .previewbar { /* styling the preciew to look like a browser tab */
   width: 100%;
-  height: 10%;
+  height: 9%;
   background-color: rgb(220, 221, 224);
   padding-left: 3%;
   display: flex;
@@ -760,13 +760,22 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   height: 100%;
 }
 .previewbar span {
-  display: inline-block;
   float: left;
   height: 80%;
-  margin-right: 1%;
+  margin-right: 0.4%;
   align-self: flex-start;
   padding-top: 1%;
 }
+.circleicons {
+  display: inline-block;
+}
+@media only screen and (max-width: 535px) {
+  .previewbar span .circleicons {
+    display: none !important;
+  }
+}
+
+
 .clientpreviewsections img { /* styling the long site screenshot */
   width: 100%;
 }

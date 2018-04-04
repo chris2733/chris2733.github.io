@@ -153,7 +153,7 @@ function onFocusOut(){
 
 // clearing form, for use in submitting form
 
-var phpURL = "contactform.php";
+var phpURL = "throughmessage.php";
 
 
 
@@ -241,7 +241,7 @@ function clearForm(){
 
 $(function() {
   $('#thisistheform').submit(function(event) {
-    event.preventDefault();
+    //event.preventDefault();
 
 		if(validateForm()){
 			sentAnimation("Sent", "#4cd137");
