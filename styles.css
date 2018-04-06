@@ -46,6 +46,7 @@
 .scale-out-center { /* scaling the sholw loading animation out */
 	-webkit-animation: scale-out-center 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
 	        animation: scale-out-center 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) both;
+          opacity: 0;
 }
 @-webkit-keyframes scale-out-center {
   0% {
@@ -54,9 +55,9 @@
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
   }
 }
 @keyframes scale-out-center {
@@ -66,9 +67,9 @@
     opacity: 1;
   }
   100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-    opacity: 1;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0;
   }
 }
 #loader div #loadingcircle { /* just the circle animation */
@@ -133,6 +134,17 @@
     opacity: 0.1;
   }
 }
+
+
+
+
+
+/* fading items on scroll */
+.hideuntilscroll {
+  opacity: 0;
+}
+
+
 
 
 
@@ -565,11 +577,9 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   }
 }
 
-#listofskills {
-}
 #page1text table {
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   margin-top: 5%;
 }
 #page1text table img {
@@ -578,7 +588,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 #page1text table td {
   width: 50px;
-  width: 1rem;
+  width: 0%;
   padding-bottom: 1rem;
 }
 #page1text table p {
@@ -590,6 +600,9 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   margin-top: 8%;
   float: left;
 }
+.projectsworkingon {
+  text-align: left;
+}
 @media only screen and (max-width: 535px) {
   #listofskills, #listoffutureskills {
     width: 100%;
@@ -599,6 +612,9 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   }
   #page1text table {
     margin: 8% auto;
+  }
+  .projectsworkingon {
+    text-align: center;
   }
 }
 
@@ -639,6 +655,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   overflow: hidden;
   padding-top: 10%;
   margin-top: 85px;
+  padding-bottom: 10%;
 }
 #page2 h1:nth-of-type(1) { /* editing header */
   font-size: 4rem;
@@ -677,6 +694,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   padding: 0;
   margin: 0;
   float: left;
+  box-shadow: 7px 7px 2px 0 #000000aa;
 }
 @media only screen and (max-width: 900px) {
   .clientpreviewsections {
@@ -770,8 +788,9 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   display: inline-block;
 }
 @media only screen and (max-width: 535px) {
-  .previewbar span .circleicons {
+  .previewbar .circleicons {
     display: none !important;
+    padding-top: 0;
   }
 }
 
@@ -825,10 +844,19 @@ hr.portofliohr {
   width: 100%;
   overflow: hidden;
 }
+#page3header {
+  font-size: 3rem;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 5%;
+}
 #page3text { /* div containering everything in page 3 */
   position: relative;
   width: 100%;
-  margin-bottom: 20%;
+  margin-bottom: 15%;
+  margin-top: 15%;
+  color: rgba(255,255,255,0.84);
 }
 @media only screen and (max-width: 535px) {
   #page3text {
@@ -836,117 +864,73 @@ hr.portofliohr {
   }
 }
 
-
-/* contact form */
-#page3header {
-  letter-spacing: 1rem;
-  font-weight: light;
+#page3links {
   text-align: center;
-  padding-top: 15vh;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: rgba(255, 255, 255, 0.73);
+  font-size: 2rem;
+  transition: 0.3 linear;
 }
-.form-control { /*to keep the background colour of each input box transparent */
-  background-color: transparent !important;
-  border: 2px solid rgba(0, 0, 0, 0.87) !important;
-  transition: ease-in-out 0.3s !important;
-  cursor: url(Images/cursor1.png), default;
-}
-/* controlling the box shadow appearing around every input in the form */
-.form-control:focus {
-  box-shadow: none !important;
-  border: 2px solid rgba(255, 255, 255, 0.87) !important;
-}
-.form-control:not(:focus):hover {
-  border: 2px solid rgba(0, 0, 0, 0.4) !important;
-}
-/* making sure the label is the right colour and in the box */
-.form-group label {
-  font: 1.5rem calibri !important;
-  color: rgba(255, 255, 255, 0.87);
-  transition: all 0.3s;
-  position: absolute;
-  transform: translateX(1.6rem) translateY(0.8rem);
-}
-.activeinput { /* this for when i disappears */
-  opacity: 0;
-}
-#message, #email, #name {
-  color: rgba(0, 188, 212, 230); /* colour of text typed in inputs */
-}
-#mysubmitform {
-  position: relative;
-  padding-top: 10vh;
-  width: 40vw;
-  min-width: 320px;
-}
-#actualbutton { /* styling it */
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  border: 2px solid rgb(1, 33, 45);
-  border-radius: 10px;
-  transition: all 0.6s;
-  width: 65px;
-  height: 65px;
-  cursor: url(Images/cursor1.png), default;
-  background-color: rgba(255, 255, 255, 0.3);
-  overflow: hidden;
-}
-#actualbutton:hover {
-  background-color: rgba(255, 255, 255, 0.7); /* this needed otherwise after the button is clicked, hover doesnt work...due to the JS */
-}
-
-/* since this whole button fiasco affects hover, adding and removing clases might be a different way */
-.buttongreen {
-  background-color: rgb(76, 209, 55) !important;
-}
-.buttonred {
-  background-color: rgb(194, 54, 22) !important;
+#pagelinks p { /* counteracts bootstrap defaults */
+  margin: 0;
 }
 
 
 
-.btn:focus { /* this removes the blue outline from bootstrap */
-  outline: none !important;
+/* animatin the email link */
+a {
+  color: rgba(255, 255, 255, 0.74) !important;
+  font-weight: lighter !important;
+  transition: 0.5s cubic-bezier(.55, 0, .1, 1);
 }
-#page3 input, #page3 textarea {
-  background-color: rgb(47, 54, 64) !important;
+a:focus, a:hover {
+  color: rgb(51, 123, 184) !important;
+  text-decoration: none !important;
 }
-.form-group { /* this so the rest can be positioned absolutely, with no difficulty */
-  position: relative;
+
+
+
+
+@media only screen and (max-width: 535px) {
+  #page3links {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  #page3table {
+    margin-top: 10%;
+  }
+  #page3header{
+    font-size: 2rem;
+  }
 }
-.error-mark { /* for the red star in each of the boxes */
-  position: absolute;
-  font-size: 22px;
-	font-family: 'Merriweather', serif;
-  color: rgb(255,0,0);
-	height:100%;
-	bottom: -5px;
-	right: 5px;
-	text-align:right;
-	opacity: 0;
+
+
+
+/* table of social links */
+#page3table table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  text-align: center;
+  margin-top: 3%;
 }
-.result { /* contains the icon and message */
-	pointer-events: none;
-	position: relative;
-	width:100%;
-	height:100%;
-	z-index: 99;
-	top: 12px;
+#page3table table td {
+  padding: 0 10px;
 }
-.result-message { /* positioning this to be above, and ensuring the js has Y not X to move along */
-  position:absolute;
-	pointer-events: none;
-	width:100%;
-	text-align:center;
-	top: -70px;
-	bottom: ;
-	font-size: 14px;
-	color: white;
+#page3table table td {
+  padding: 0 10px;
 }
+#page3table table td:not(:hover) svg path {
+  fill: rgba(255,255,255, 0.84);
+}
+#page3table table td:hover svg path {
+  fill: rgb(51, 123, 184);
+  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+}
+
+
+
+
+
+
 
 
 
@@ -986,30 +970,12 @@ hr.portofliohr {
   color: rgba(255,255,255,0.84);
 }
 #endpaneltext p {
+  position: relative;
   font-size: 90%;
   text-align: center;
-  margin-top: 3vh;
+  top: 47%;
 }
-#endpaneltext table {
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-  text-align: center;
-  margin-top: 3%;
-}
-#endpaneltext table td {
-  padding: 0 10px;
-}
-#endpaneltext table td {
-  padding: 0 10px;
-}
-#endpaneltext table td:not(:hover) svg path {
-  fill: rgba(255,255,255, 0.84);
-}
-#endpaneltext table td:hover svg path {
-  fill: rgba(0, 188, 212, 0.94);
-  transition: 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
-}
+
 
 
 /* styling arrow section */
