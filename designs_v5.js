@@ -39,8 +39,8 @@ function loadinganimationout() {
 }
 
 function pageLoaded() {
-  setTimeout(loadinganimationout, 1500);
-  setTimeout(showPage, 2000);
+  setTimeout(loadinganimationout, 1000);
+  setTimeout(showPage, 1000);
 }
 
 // animations to fade in all divs in first section
@@ -78,7 +78,7 @@ function movingnames() {
 
 
 function showPage() {
-  $('#loader').fadeOut("slow");
+  $('#loader').fadeOut(1500);
   setTimeout(maintextanimation, 700);
   setTimeout(maintextanimation2, 1400);
   setTimeout(starticonsanimation1, 2700);

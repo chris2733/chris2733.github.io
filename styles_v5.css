@@ -33,9 +33,10 @@
   position: fixed;
   z-index: 1000;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   height: 100%;
   background-color: rgb(4, 4, 4);
+  overflow: hidden;
 }
 #loadinganimation {
   position: relative;
@@ -650,7 +651,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 #page2 {
   position: relative;
   z-index: 3;
-  background-color: rgb(80, 120, 154);
+  background-color: rgb(57, 90, 117);
   width: 100%;
   overflow: hidden;
   padding-top: 10%;
