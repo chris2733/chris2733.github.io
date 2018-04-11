@@ -16,7 +16,7 @@
   <meta charset="UTF-8">
   <title>Chris Law | Front End Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles_v5.css">
+  <link rel="stylesheet" href="styles_v5.1.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat|PT+Sans|Raleway" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
@@ -100,7 +100,7 @@
 <!-- page 1 -->
 <div id="page1" class="hideuntilload">
   <div id="page1text" class="container">
-    <div id="page1textseg1" class="">
+    <div id="page1textseg1" class="page1hideuntilscroll">
       <img src="thread1smalledit3.png" alt="">
       <div id="firsttext">
         <h3 class="page1headers">about me</h3>
@@ -109,7 +109,7 @@
       </div>
     </div>
     <div class="">
-        <div id="listofskills" class="">
+        <div id="listofskills" class="page1hideuntilscroll">
           <h3 class="page1headers">skills</h3>
           <table>
             <tr>
@@ -134,8 +134,8 @@
             </tr>
           </table>
         </div>
-        <div id="listoffutureskills" class="">
-          <h3 class="page1headers">What I'm learning</h3>
+        <div id="listoffutureskills" class="page1hideuntilscroll">
+          <h3 class="page1headers">Developing skills</h3>
           <table>
             <tr>
               <td><img src="Images/lggulp.png" alt="gulplogo"><p>Gulp</p></td>
@@ -177,12 +177,12 @@
 <!-- page 2 -->
 <div id="page2" class="hideuntilload">
 
-<div class="">
+<div class="portfoliohideuntilscroll">
 <h1 class="">Portfolio</h1>
 </div>
 
 
-<div id="hotelspeaker" class="portfoliopieces">
+<div id="hotelspeaker" class="portfoliopieces portfoliohideuntilscroll">
 
   <div id="hotelspeakerpreview" class="clientpreviewsections">
 
@@ -234,6 +234,13 @@
 
   </div>
 
+  <div id="portfoliobrief2">
+    <p>A challenging part of this site was ensuring 6 languages were implemented fully
+      across the site including French, German, Dutch, Spanish and Catalan. This was
+    perhaps the most time consuming part, and needed regular communication with specific
+    team members for translations and corrections.</p>
+  </div>
+
 
 </div> <!-- Hotelspeaker portfolio end-->
 
@@ -243,7 +250,7 @@
 
 
 
-<div id="wavelength" class="portfoliopieces">
+<div id="wavelength" class="portfoliopieces portfoliohideuntilscroll">
 
   <div id="wavelengthpreview" class="clientpreviewsections">
 
@@ -307,7 +314,7 @@
 
 
 
-<div id="littlefaces" class="portfoliopieces">
+<div id="littlefaces" class="portfoliopieces portfoliohideuntilscroll">
 
   <div id="littlefacespreview" class="clientpreviewsections">
 
@@ -365,7 +372,7 @@
 
 
 
-<div id="nsdesigns" class="portfoliopieces">
+<div id="nsdesigns" class="portfoliopieces portfoliohideuntilscroll">
 
   <div id="nsdesignspreview" class="clientpreviewsections">
 
@@ -427,7 +434,7 @@
 
 
 
-<div id="cardiffmade" class="portfoliopieces">
+<div id="cardiffmade" class="portfoliopieces portfoliohideuntilscroll">
 
   <div id="cardiffmadepreview" class="clientpreviewsections">
 
@@ -527,11 +534,11 @@
 
 <div id="page3" class="hideuntilload"> <!-- mainly for the sumbit form -->
 
-<div id="page3text">
-<h1 id="page3header">Get in touch</h1>
-  <div id="page3links">
+<div id="page3text" class="">
+<h1 id="page3header" class="contacthideuntilscroll">Get in touch</h1>
+  <div id="page3links" class="contacthideuntilscroll">
 
-    <a href="mailto:hello@chris-law.uk" id="maillinkid">hello@chris-law.uk</a>
+    <a href="mailto:hello@chris-law.uk" class="">hello@chris-law.uk</a>
 
     <div id="page3table">
       <table>
@@ -578,7 +585,7 @@
 
 
 
-<script src="designs_v5.js"></script>
+<script src="designs_v5.1.js"></script>
 </body>
 
 

@@ -141,7 +141,7 @@
 
 
 /* fading items on scroll */
-.hideuntilscroll {
+.portfoliohideuntilscroll, .contacthideuntilscroll, .page1hideuntilscroll {
   opacity: 0;
 }
 
@@ -516,8 +516,11 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 
 
 
+
+
 /* page 1 editing */
 #page1 {
+  position: relative;
   z-index: 3;
   background-color: rgba(220, 221, 224, 0.67);
   width: 100%;
@@ -841,6 +844,7 @@ hr.portofliohr {
 
 /* page 3 */
 #page3 {
+  position: relative;
   background-color: rgba(47, 54, 64, 0.67);
   width: 100%;
   overflow: hidden;
@@ -880,13 +884,18 @@ hr.portofliohr {
 a {
   color: rgba(255, 255, 255, 0.74) !important;
   font-weight: lighter !important;
-  transition: 0.5s cubic-bezier(.55, 0, .1, 1);
+  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+a:not(:hover) {
+  color: rgba(255, 255, 255, 0.74) !important;
+  font-weight: lighter !important;
+  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
 }
 a:focus, a:hover {
   color: rgb(51, 123, 184) !important;
   text-decoration: none !important;
+  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
 }
-
 
 
 
@@ -921,6 +930,7 @@ a:focus, a:hover {
 }
 #page3table table td:not(:hover) svg path {
   fill: rgba(255,255,255, 0.84);
+  transition: all 0.5s cubic-bezier(.55, 0, .1, 1);
 }
 #page3table table td:hover svg path {
   fill: rgb(51, 123, 184);

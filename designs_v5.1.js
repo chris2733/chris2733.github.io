@@ -5,26 +5,54 @@
 
 
 // fading in items .hideme on scroll
-$(function(){  // $(document).ready shorthand
+/*
+$(function(){  $(document).ready shorthand
   $('').fadeIn('slow');
-});
+}); */
+
+
+
 
 $(document).ready(function() {
     /* Every time the window is scrolled ... */
     $(window).scroll( function(){
         /* Check the location of each desired element */
-        $('.hideuntilscroll').each( function(i){
-            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+        $('.page1hideuntilscroll').each( function(){ // for page 1  since .position calculates only to the parent, not top of page
+            var bottom_of_object = $(this).position().top + $(this).outerHeight() + $("#textsection").height() ;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
 
             /* If the object is completely visible in the window, fade it it */
             if( bottom_of_window > bottom_of_object ){
 
-                $(this).delay(100).animate({'opacity':'1'}, 600);
+                $(this).delay(100).animate({'opacity':'1'}, 800);
             }
         });
+        $('.portfoliohideuntilscroll').each( function(){  // this only for portfoliopeices
+            var bottom_of_object = $(this).position().top + $(this).outerHeight() + $("#page1").height() + $("#textsection").height();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+
+                $(this).delay(100).animate({'opacity':'1'}, 800);
+            }
+        });
+        $('.contacthideuntilscroll').each( function(){  // contact page
+            var bottom_of_object = $(this).position().top + $(this).outerHeight() + $("#page2").height() + $("#page1").height() + $("#textsection").height() + $("#page3").height();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            console.log(bottom_of_object)
+            console.log(bottom_of_window)
+
+            /* If the object is completely visible in the window, fade it */
+            if( bottom_of_window > bottom_of_object ){
+                $(this).delay(100).animate({'opacity':'1'}, 800);
+            }
+        });
+
     });
 });
+
+
 
 
 
