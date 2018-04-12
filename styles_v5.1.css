@@ -654,7 +654,7 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 #page2 {
   position: relative;
   z-index: 3;
-  background-color: rgb(57, 90, 117);
+  background-color: rgba(0, 79, 121, 0.71);
   width: 100%;
   overflow: hidden;
   padding-top: 10%;
@@ -696,11 +696,11 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   height: 266px; /* make sure ratio is height/width = 2/3 */
   width: 400px;
   padding: 0;
-  margin: 0;
+  margin: 0 5% 5% 0;
   float: left;
-  box-shadow: 7px 7px 2px 0 #000000aa;
+  box-shadow: 7px 7px 2px 0 rgba(27, 27, 27,0.7);
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1000px) {
   .clientpreviewsections {
     position: relative;
     top: 0;
@@ -722,37 +722,6 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   }
 }
 
-.portfoliobrief { /* text to the right of each preview box */
-  position: relative;
-  display: inline-block;
-  padding-left: 5%;
-  width: 35vw;
-  color: rgb(222, 222, 222);
-}
-@media only screen and (max-width: 900px) {
-  .portfoliobrief {
-    display: block;
-    padding-left: 5%;
-    width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-@media only screen and (min-width: 1100px) {
-  .portfoliobrief {
-    display: inline-block;
-    padding-left: 5%;
-    width: 50%;
-  }
-}
-.portfoliobrief h2 {
-  margin-top: 0;
-}
-@media only screen and (max-width: 900px) {
-  .portfoliobrief h2 {
-    text-align: center;
-  }
-}
 
 .previewscreen { /* the part of the preview showing the webpage */
   position: relative;
@@ -818,6 +787,73 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
 }
 
 
+.portfoliobrief { /* text to the right of each preview box */
+  position: relative;
+  display: block;
+  float: left;
+  width: 35vw;
+}
+@media only screen and (max-width: 1000px) {
+  .portfoliobrief {
+    display: inline;
+    width: auto;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .portfoliobrief {
+    position: relative;
+    display: block;
+    float: left;
+  }
+}
+.portfoliobrief h2 {
+  margin-top: 0;
+}
+@media only screen and (max-width: 1000px) {
+  .portfoliobrief h2 {
+    text-align: center;
+  }
+}
+
+.portfoliobrief2 {
+  position: relative;
+  display: block;
+  clear: left;
+}
+.portfoliobrief2 h3 {
+  text-align: center;
+}
+
+.portfoliobrief, .portfoliobrief2 {
+  line-height: 2.5rem;
+  color: rgb(222, 222, 222);
+  font-family: "calibri" !important;
+  font-size: 1.6rem;
+}
+
+.portfoliolink {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: inherit;
+  background-color: rgba(8, 7, 7, 0.36);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 14rem;
+  padding: 0.5rem;
+  margin: auto;
+}
+.portfoliolink:hover {
+  background-color: rgba(8, 7, 7, 0.5);
+}
+@media only screen and (max-width: 1000px) {
+  .portfoliolink {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
 /* styling the rule under each portfoliopeice */
 hr.portofliohr {
   margin: 5% auto;
@@ -835,7 +871,11 @@ hr.portofliohr {
   z-index: 10;
   position: relative;
   width: 100%;
-  background-color: rgba(47, 54, 64, 0.67);
+  height: 74.4px; /* only becuase a strange line appears when playing with the svgs.... */
+  overflow: hidden;
+}
+#page3dividerfirsthalf svg {
+  position: absolute;
 }
 
 
