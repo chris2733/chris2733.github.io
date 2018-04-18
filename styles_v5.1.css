@@ -605,6 +605,8 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   float: left;
 }
 .projectsworkingon {
+  display: flex;
+  align-items: center;
   text-align: left;
 }
 @media only screen and (max-width: 535px) {
@@ -622,7 +624,11 @@ pre { /* editing my name, its in the PRE tag otherwise the multiple spaces don't
   }
 }
 
-
+.projectlogos {
+  display: inline-block;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
 
 
 
