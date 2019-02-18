@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #8EAF9D;
 }
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
@@ -18,9 +17,9 @@ h1, h2, h3, h4, h5, h6, p {
 
 .header {
   color: #fff;
-  background: rgba(12, 0, 37, 0.8);
+  background: #2D2D2D;
   width: 100%;
-  padding: 20px 0;
+  padding: 40px 60px;
   text-align: center;
   font-size: 24px;
 }
@@ -36,21 +35,21 @@ h1, h2, h3, h4, h5, h6, p {
   width: 100%;
   justify-content: flex-start;
   box-sizing: border-box;
-  padding: 15px 10px;
 }
 .todo-item {
   /* display: inline-block; */
-  width: 100%;
-  padding: 10px 15px 10px 10px;
-  color: rgb(14, 0, 38);
+  width: 50%;
+  padding: 40px;
+  color: #3e3e3e;
   transition: all 0.3s ease;
   position: relative;
   box-sizing: border-box;
-  margin: 0 0 50px 0;
+  border: 1px solid #d9d9d9;
 }
 @media (min-width: 576px) {
   .todo-item {
-    width: 50%;
+    width: 25%;
+    padding: 20px;
   }
 }
 .todo-item input {
@@ -59,30 +58,45 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .todo-item button {
   display: block;
-  margin: 20px;
+  margin: 120px auto;
   background: none;
   border: none;
   outline: none;
-  padding: 20px 40px;
-  border: 2px solid black;
-  border-radius: 5px;
+  padding: 30px 70px;
+  border: none;
+  color: #3e3e3e;
+  font-size: 30px;
+  /* border-radius: 5px; */
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .filterbuttons {
   display: inline-block;
-  background: rgb(120, 190, 255);
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
   margin: 0 10px 0 0;
+  color: #fff;
+}
+.filterbuttons:before {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background: #3e3e3e;
+    vertical-align: middle;
+    margin: 0 10px 0;
+}
+.filterbuttons.checked:before {
+    background: #fff;
 }
 .filterbuttons-wrap {
   display: flex;
   flex-wrap: wrap;
   padding: 15px 10px;
   box-sizing: border-box;
+  background: #242424;
 }
 
 .todo-item button.slide1 {
@@ -90,6 +104,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .todo-item button.slide1:hover {
   background: no-repeat right / 200% 100% linear-gradient(to left, blue 50%, green 50%);
+  color: #fff;
 }
 
 .todo-item button.slide2 {
@@ -97,4 +112,5 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .todo-item button.slide2:hover {
   background: no-repeat top / 100% 200% linear-gradient(to top, blue 50%, green 50%);
+  color: #fff;
 }

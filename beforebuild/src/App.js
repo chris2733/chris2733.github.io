@@ -13,7 +13,6 @@ class App extends Component {
         id: 1,
         title: "Button 1",
         content: 'Button',
-        completed: false,
         typeF: "type1",
         hidden: false,
         classN: 'slide1',
@@ -23,7 +22,6 @@ class App extends Component {
         id: 2,
         title: "Button 2",
         content: 'Button',
-        completed: false,
         typeF: "type1",
         hidden: false,
         classN: 'slide2',
@@ -33,7 +31,6 @@ class App extends Component {
         id: 3,
         title: "Button 3",
         content: 'Button',
-        completed: false,
         typeF: "type1",
         hidden: false,
         classN: '',
@@ -43,7 +40,6 @@ class App extends Component {
         id: 4,
         title: "Button 4",
         content: 'Button',
-        completed: false,
         typeF: "type1",
         hidden: false,
         classN: '',
@@ -53,7 +49,6 @@ class App extends Component {
         id: 5,
         title: "Button 5",
         content: 'Button',
-        completed: false,
         typeF: "type2",
         hidden: false,
         classN: '',
@@ -63,7 +58,6 @@ class App extends Component {
         id: 6,
         title: "Button 6",
         content: 'Button',
-        completed: false,
         typeF: "type2",
         hidden: false,
         classN: '',
@@ -91,12 +85,13 @@ class App extends Component {
       <div className="App">
         <Header />
         <div className="filterbuttons-wrap">
-          <FilterAll filterChange={this.filterChange}/>
-          <Filter1 filterChange={this.filterChange}/>
-          <Filter2 filterChange={this.filterChange}/>
+            <h4>Filter type</h4>
+            <FilterAll filterChange={this.filterChange}/>
+            <Filter1 filterChange={this.filterChange}/>
+            <Filter2 filterChange={this.filterChange}/>
         </div>
         <div className="todo-item-wrap">
-          <Todos todos={this.state.todos}/>
+            <Todos todos={this.state.todos}/>
         </div>
       </div>
     );
