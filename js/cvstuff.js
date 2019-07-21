@@ -17,12 +17,14 @@ request.onload = function() {
 
 function populateHeader(jsonObj) {
     var schoolData = jsonObj['schooling'];
-    console.log(jsonObj);
-    var schoolH = document.createElement('h1');
-    schoolStuff.textContent = schoolData.name;
-    header.appendChild(myH1);
-
-    var myPara = document.createElement('p');
-    myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
-    header.appendChild(myPara);
+    schoolData.forEach(function(e) {
+        console.log(e);
+    });
+    // var schoolH = document.createElement('h1');
+    // schoolH.textContent = schoolData.name;
+    // header.appendChild(schoolH);
+    //
+    // var myPara = document.createElement('p');
+    // myPara.textContent = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['formed'];
+    // header.appendChild(myPara);
 }
