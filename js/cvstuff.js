@@ -20,7 +20,7 @@ function populateHeader(jsonObj) {
     var i = 1;
     schoolData.forEach(function(element) {
         var school = document.createElement('div');
-        school.addClass('cvwrap-content-each');
+        school.className = ('cvwrap-content-each');
         school.setAttribute('id','school' + i);
         school.appendChild(document.createElement('div').addClass('cvwrap-content-each-title').createTextNode(element.name));
         school.appendChild(document.createElement('div').addClass('cvwrap-content-each-time').createTextNode(element.time));
