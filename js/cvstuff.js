@@ -28,7 +28,7 @@ function populateHeader(jsonObj) {
         schoolTime.innerText = element.time;
         var schoolGrade = school.appendChild(document.createElement('div'));
         schoolGrade.innerText = element.grades;
-        schoolStuff.appendChild(school);
+        document.getElementById('schoolhistory').appendChild(school);
         i++;
     });
     // var schoolH = document.createElement('h1');
