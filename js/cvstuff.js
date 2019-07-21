@@ -2,7 +2,7 @@ var schoolStuff = $('#schoolhistory');
 
 var siteUrl = window.location.href;
 
-var requestURL = siteurl + '/json/cv.json';
+var requestURL = '/json/cv.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
