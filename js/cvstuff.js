@@ -19,9 +19,10 @@ function populateHeader(jsonObj) {
     var schoolData = jsonObj['schooling'];
     var i = 1;
     schoolData.forEach(function(element) {
-        var school = document.createElement('div').addClass('cvwrap-content-each')setAttribute('id','school' + i);
-        var schoolHeader = element.name;
-        school.appendChild(document.createElement('div').addClass('cvwrap-content-each-title').createTextNode(schoolHeader));
+        var school = document.createElement('div').addClass('cvwrap-content-each').setAttribute('id','school' + i);
+        school.appendChild(document.createElement('div').addClass('cvwrap-content-each-title').createTextNode(element.name));
+        school.appendChild(document.createElement('div').addClass('cvwrap-content-each-time').createTextNode(element.time));
+        school.appendChild(document.createElement('div').addClass('cvwrap-content-each-grades').createTextNode(element.grades));
         i++;
     });
     // var schoolH = document.createElement('h1');
