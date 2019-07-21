@@ -22,9 +22,12 @@ function populateHeader(jsonObj) {
         var school = document.createElement('div');
         school.className = ('cvwrap-content-each');
         school.setAttribute('id','school' + i);
-        school.appendChild(document.createElement('div').createTextNode(element.name));
-        school.appendChild(document.createElement('div').createTextNode(element.time));
-        school.appendChild(document.createElement('div').createTextNode(element.grades));
+        var schoolName = school.appendChild(document.createElement('div'));
+        schoolName.innerText = element.name;
+        var schoolTime = school.appendChild(document.createElement('div'));
+        schoolTime.innerText = element.time;
+        var schoolGrade = school.appendChild(document.createElement('div'));
+        schoolGrade.innerText = element.grades;
         schoolStuff.appendChild(school);
         i++;
     });
