@@ -17,8 +17,12 @@ request.onload = function() {
 
 function populateHeader(jsonObj) {
     var schoolData = jsonObj['schooling'];
-    schoolData.forEach(function(e) {
-        console.log(e);
+    var i = 1;
+    schoolData.forEach(function(element) {
+        var school = document.createElement('div').addClass('cvwrap-content-each')setAttribute('id','school' + i);
+        var schoolHeader = element.name;
+        school.appendChild(document.createElement('div').addClass('cvwrap-content-each-title').createTextNode(schoolHeader));
+        i++;
     });
     // var schoolH = document.createElement('h1');
     // schoolH.textContent = schoolData.name;
