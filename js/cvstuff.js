@@ -19,7 +19,9 @@ function populateHeader(jsonObj) {
     var schoolData = jsonObj['schooling'];
     var i = 1;
     schoolData.forEach(function(element) {
-        var school = document.createElement('div').addClass('cvwrap-content-each').setAttribute('id','school' + i);
+        var school = document.createElement('div');
+        school.addClass('cvwrap-content-each');
+        school.setAttribute('id','school' + i);
         school.appendChild(document.createElement('div').addClass('cvwrap-content-each-title').createTextNode(element.name));
         school.appendChild(document.createElement('div').addClass('cvwrap-content-each-time').createTextNode(element.time));
         school.appendChild(document.createElement('div').addClass('cvwrap-content-each-grades').createTextNode(element.grades));
