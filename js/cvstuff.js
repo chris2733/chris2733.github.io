@@ -5,6 +5,8 @@ var requestURL = 'C:/Users/chris/Documents/GitHub/Mysite/json/cv.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
+request.withCredentials = true;
+request.setRequestHeader("Content-Type", "application/json");
 request.send();
 
 
