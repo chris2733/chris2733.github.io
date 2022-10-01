@@ -1,9 +1,12 @@
-import { motion } from "framer-motion";
-import Masthead from "./components/masthead";
+// import Masthead from "./components/masthead";
 
-const Landing = () => {
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+const About = () => {
 	return (
 		<motion.div
+			className="bg-white"
 			initial="pageInitial"
 			exit="pageExit"
 			animate="pageAnimate"
@@ -22,9 +25,12 @@ const Landing = () => {
 				},
 			}}
 		>
-			<Masthead />
+			<h1>about</h1>
+			<Link href="/">
+				<a>Home</a>
+			</Link>
 		</motion.div>
 	);
 };
 
-export default Landing;
+export default About;
