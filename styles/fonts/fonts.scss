@@ -1,0 +1,26 @@
+@font-face {
+	font-family: "Sen";
+	src: local("Sen Bold"), local("Sen-Bold"),
+		url("./Sen/Sen-Bold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Sen";
+	src: local("Sen ExtraBold"), local("Sen-ExtraBold"),
+		url("./Sen/Sen-ExtraBold.ttf") format("truetype");
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Sen";
+	src: local("Sen Regular"), local("Sen-Regular"),
+		url("./Sen/Sen-Regular.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}

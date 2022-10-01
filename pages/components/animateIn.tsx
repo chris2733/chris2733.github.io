@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 
 export default function AnimateIn({
 	children,
+	delay,
 }: {
 	children: React.ReactNode | React.ReactNode[];
+	delay: number;
 }) {
 	return (
 		<motion.div
@@ -16,7 +18,7 @@ export default function AnimateIn({
 				visible: {
 					opacity: 1,
 					transition: {
-						delay: 0.2,
+						delay: delay ? delay : 0.2,
 						duration: 1,
 					},
 				},
