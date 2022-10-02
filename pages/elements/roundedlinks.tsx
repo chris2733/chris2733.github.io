@@ -4,9 +4,13 @@ import { useEffect, useRef, useState } from "react";
 export default function RoundedLinks({
 	link,
 	children,
+	buttonClasses,
+	borderClasses,
 }: {
 	link: string;
 	children: React.ReactNode | React.ReactNode[];
+	buttonClasses?: string;
+	borderClasses?: string;
 }) {
 	const [dashoffset, setDashoffset] = useState(0);
 	const [pathLength, setPathLength] = useState(0);
@@ -24,7 +28,8 @@ export default function RoundedLinks({
 
 			const buttonCircum =
 				(buttonWidth - buttonHeight) * 2 + buttonRoundedCircum;
-			buttonEl.current !== null && setPathLength(buttonCircum.toFixed(2));
+			// maybe catch this so its not 16 decimal points, while making sure its a number
+			buttonEl.current !== null && setPathLength(buttonCircum);
 		}
 
 		textEl.current !== null && setPathLengthHover(textEl.current.offsetWidth);
@@ -36,7 +41,7 @@ export default function RoundedLinks({
 			<Link href={link}>
 				<span
 					ref={buttonEl}
-					className=" px-[18px] py-[6px] inline-block rounded-full relative opacity-80 outlinehover"
+					className={`px-[18px] py-[6px] inline-block rounded-full relative opacity-80 outlinehover ${buttonClasses}`}
 					onMouseOver={() => setDashoffset(pathLength - pathLengthHover)}
 					onMouseLeave={() => setDashoffset(0)}
 				>
@@ -49,7 +54,6 @@ export default function RoundedLinks({
 							rx="15"
 							y="0.5"
 							x="1"
-							stroke="#ffffff"
 							fill="none"
 							strokeWidth="2"
 							pathLength={pathLength}
@@ -57,7 +61,7 @@ export default function RoundedLinks({
 							strokeDashoffset={dashoffset}
 							width="97%"
 							height="97%"
-							className="duration-[0.5s] ease-in-out"
+							className={`duration-[0.4s] ease-in-out stroke-white ${borderClasses}`}
 						></rect>
 					</svg>
 				</span>

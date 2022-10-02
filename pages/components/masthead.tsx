@@ -6,7 +6,7 @@ const Masthead = () => {
 	const headlineClasses =
 		"hover:text-blue-300 duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] cursor-default inline-block mx-[1px]";
 	return (
-		<div className="min-h-screen bg-black text-white flex justify-center items-center">
+		<div className="min-h-screen text-white flex justify-center items-center">
 			<div className="container text-center text-masthead uppercase">
 				<div className="block">
 					<h1 className="inline-block overflow-hidden leading-5">
