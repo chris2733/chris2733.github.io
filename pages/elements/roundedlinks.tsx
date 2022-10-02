@@ -12,11 +12,11 @@ export default function RoundedLinks({
 	buttonClasses?: string;
 	borderClasses?: string;
 }) {
-	const [dashoffset, setDashoffset] = useState(0);
-	const [pathLength, setPathLength] = useState(0);
-	const [pathLengthHover, setPathLengthHover] = useState(0);
-	const textEl = useRef(null);
-	const buttonEl = useRef(null);
+	const [dashoffset, setDashoffset] = useState<number>(0);
+	const [pathLength, setPathLength] = useState<number>(0);
+	const [pathLengthHover, setPathLengthHover] = useState<number>(0);
+	const textEl = useRef<HTMLInputElement>(null);
+	const buttonEl = useRef<HTMLInputElement>(null);
 
 	useEffect(() => {
 		if (buttonEl.current !== null) {
@@ -25,6 +25,7 @@ export default function RoundedLinks({
 			const buttonWidth: number = buttonEl.current.offsetWidth - 3;
 			const buttonHeight: number = buttonEl.current.offsetHeight - 3;
 			const buttonRoundedCircum: number = buttonHeight * Math.PI;
+			console.log(buttonEl);
 
 			const buttonCircum =
 				(buttonWidth - buttonHeight) * 2 + buttonRoundedCircum;

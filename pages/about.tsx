@@ -5,7 +5,7 @@ import PageTransitionWrapper from "./components/pageTransition";
 const About = () => {
 	return (
 		<>
-			<NextSeo title="Work" />
+			<NextSeo title="About" />
 			<PageTransitionWrapper classes="bg-white">
 				<h1>About</h1>
 				<Link href="/">
