@@ -4,10 +4,12 @@ export default function Splitter({
 	text,
 	initialDelay,
 	letterDelay,
+	letterClass,
 }: {
 	text: string;
 	initialDelay?: number;
 	letterDelay?: number;
+	letterClass?: string;
 }) {
 	let splittext = Array.from(text);
 	return (
@@ -19,10 +21,10 @@ export default function Splitter({
 					animate="visible"
 					variants={{
 						hidden: {
-							opacity: 0,
+							y: "100%",
 						},
 						visible: {
-							opacity: "100%",
+							y: "0",
 							transition: {
 								delay:
 									i * (letterDelay ? letterDelay : 0.2) +
@@ -30,7 +32,7 @@ export default function Splitter({
 							},
 						},
 					}}
-					className="hover:text-blue-300 duration-200 cursor-default"
+					className={letterClass ? letterClass : "duration-200"}
 				>
 					<span dangerouslySetInnerHTML={{ __html: el }}></span>
 				</motion.span>
