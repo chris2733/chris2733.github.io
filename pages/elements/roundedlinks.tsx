@@ -39,7 +39,8 @@ export default function RoundedLinks({
 
 	return (
 		<>
-			<Link href={link}>
+			{/* i think this was causing errors if left not with a default option, not sure though, or sure of best fix */}
+			<Link href={link ? link : "/"}>
 				<span
 					ref={buttonEl}
 					className={`px-[18px] py-[6px] inline-block rounded-full relative opacity-80 outlinehover ${buttonClasses}`}
